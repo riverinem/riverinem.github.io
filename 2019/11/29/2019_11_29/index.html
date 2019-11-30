@@ -3,17 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>tag: 技术 | Hexo</title>
+  <title>使用hexo搭建博客 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="keywords" content="技术" />
   
   
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;%E6%8A%80%E6%9C%AF&#x2F;index.html">
+  
+  <meta name="description" content="前言第一次做技术类分享，前前后后搭建花了不到3天时间。最早在整理文档和笔记时陆续使用过有道云笔记、印象笔记、备忘录等，但是主要应用场景还是在内容的摘录、日常任务处理和其他文档保存来方便查阅的几个场景上，对于存粹自己写一些东西分享出来就比较少。搭建个人博客这个想法源于在Youtube上看到的大咖分享，于是自己也想试一试。另外，从PM的视角来看，其实也是给自己亲手打造MVP形式Blog产品的机会，在着">
+<meta name="keywords" content="技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Hexo搭建博客">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;29&#x2F;2019_11_29&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言第一次做技术类分享，前前后后搭建花了不到3天时间。最早在整理文档和笔记时陆续使用过有道云笔记、印象笔记、备忘录等，但是主要应用场景还是在内容的摘录、日常任务处理和其他文档保存来方便查阅的几个场景上，对于存粹自己写一些东西分享出来就比较少。搭建个人博客这个想法源于在Youtube上看到的大咖分享，于是自己也想试一试。另外，从PM的视角来看，其实也是给自己亲手打造MVP形式Blog产品的机会，在着">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-30T15:15:34.933Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -55,8 +61,6 @@
   
 
   
-    <link rel="stylesheet" href="/css/archive.css" >
-  
   
   
     <link rel="stylesheet" href="/css/vdonate.css" >
@@ -66,7 +70,7 @@
 
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
   
@@ -89,7 +93,7 @@
             
               <a class="brand" style="
                  border-width: 0px;  margin-top: 5px;"  
-                 >
+                href="#" data-toggle="modal" data-target="#myModal" >
                   <img width="80px" height="80px" alt="Hike News" src="/css/images/eyelite.svg">
               </a>
             
@@ -158,64 +162,168 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;">
-  
-  
-  
+          <section id="main" style="float:none;"><article id="post-2019_11_29" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2019" class="archive-year">2019</a></h1>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2019/11/30/2019_11_30/" class="archive-article-date">
-	  <time datetime="2019-11-30T15:19:56.493Z" itemprop="datePublished">2019-11-30</time>
-	</a>
-
-      
+      <header class="article-header">
+        
   
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/11/30/2019_11_30/">SQL概念与应用</a>
+    <h1 class="thumb" class="article-title" itemprop="name">
+      使用Hexo搭建博客
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
+    <div class="article-meta">
       
-	<a href="/2019/11/29/2019_11_29/" class="archive-article-date">
+	<a href="/2019/11/29/2019_11_29/" class="article-date">
 	  <time datetime="2019-11-29T07:12:29.559Z" itemprop="datePublished">2019-11-29</time>
 	</a>
 
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/11/29/2019_11_29/">使用Hexo搭建博客</a>
-    </h1>
-  
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
 
-    </header>
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>第一次做技术类分享，前前后后搭建花了不到3天时间。最早在整理文档和笔记时陆续使用过有道云笔记、印象笔记、备忘录等，但是主要应用场景还是在内容的摘录、日常任务处理和其他文档保存来方便查阅的几个场景上，对于存粹自己写一些东西分享出来就比较少。搭建个人博客这个想法源于在Youtube上看到的大咖分享，于是自己也想试一试。另外，从PM的视角来看，其实也是给自己亲手打造MVP形式Blog产品的机会，在着手之前，需要定位这个Blog潜在阅读受众、搭建成本和长期价值等。</p>
+<h2 id="为什么选择Hexo"><a href="#为什么选择Hexo" class="headerlink" title="为什么选择Hexo"></a>为什么选择Hexo</h2><p>目前供大家使用的博客框架有很多，以下是主流框架和简单比对：</p>
+<p>1）主流博客搭建方案</p>
+<ol>
+<li>Git+Github+Markdown+jekyll （免费）</li>
+<li>Git+Github+Markdown+hexo （免费）</li>
+<li>虚拟主机＋插件＋Wordpress （付费）</li>
+</ol>
+<p>2）难度系数</p>
+<p>总体而言，hexo&lt;jekyll&lt;Wordpress；对于大部分像我这样的小白来说，刚开始会选择用前2种方案，首先是免费，其次付费还需要备案，新手门槛较高，当然对于后期进阶我也会尝试第3种方案；Hexo的主要优缺点如下：</p>
+<p>优点：</p>
+<ul>
+<li>静态加载速度快；</li>
+<li>支持Markdown编辑；</li>
+<li>免费部署在Github上；</li>
+<li>命令比Jekyll简单。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>需要一定网页基础；</li>
+<li>依赖本地环境，更换电脑需要重新配置。</li>
+</ul>
+<h2 id="如何配置Hexo"><a href="#如何配置Hexo" class="headerlink" title="如何配置Hexo"></a>如何配置Hexo</h2><p>1）资源准备</p>
+<p><a href="http://nodejs.cn/download/" target="_blank" rel="noopener">nodejs</a><br><a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener">git</a><br><a href="https://www.runoob.com/w3cnote/git-guide.html" target="_blank" rel="noopener">github</a><br><a href="https://hexo.io/" target="_blank" rel="noopener">hexo</a><br><a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">markdown</a></p>
+<p>2）主要步骤</p>
+<ol>
+<li>安装Node.js</li>
+<li>安装git，配置github</li>
+<li>安装Hexo</li>
+<li>创建网站</li>
+<li>安装Hexo主题</li>
+<li>按照个人需求自定义</li>
+<li>部署到Github</li>
+<li>配置域名</li>
+</ol>
+<p>教程参考: <a href="https://blog.geekmubai.com/hexoblog/" target="_blank" rel="noopener">Hexo搭建教程</a><br>视频参考：</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/Ud1xAhu7t2Y" frameborder="0" allowfullscreen></iframe></div>
+
+
+
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p>1）终端返回4000端口被使用，这个时候可以自定义换一个端口，运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo hexo server -p 5000</span></pre></td></tr></table></figure>
+<p>另外，每次使用新端口，避免再出现端口被使用，结束时执行 <kbd>Citrl</kbd>+<kbd>C</kbd>。</p>
+<p>2）Hexo主题中的图片替换，一般在themes/source/css/images路径下，支持的文件格式有jpg/png/svg等。</p>
+<p>3）在用atom编辑器时，需要系统分配文件修改权限，打开Mac下终端Terminal，执行<kbd>c d</kbd>打开需要修改文件的上一级目录，再执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo chmod -R 777 &lt;文件名&gt;</span></pre></td></tr></table></figure>
+<p>4）在安装Hexo的时候，遇到Mac Terminal拒绝执行命令时，需要加前缀命令<kbd>sudo</kbd>。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '觉得还不错的话，请作者喝杯咖啡哦☕️～', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/riverinem/riverinem.github.io/master/css/images/wechat.png',
+  alipayImage: 'https://raw.githubusercontent.com/riverinem/riverinem.github.io/master/css/images/alipay.png'
+});
+</script>
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+      
+
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/11/30/2019_11_30/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          SQL概念与应用
+        
+      </div>
+    </a>
   
   
-    </div></section>
-  
+</nav>
 
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么选择Hexo"><span class="nav-number">2.</span> <span class="nav-text">为什么选择Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何配置Hexo"><span class="nav-number">3.</span> <span class="nav-text">如何配置Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题"><span class="nav-number">4.</span> <span class="nav-text">常见问题</span></a></li></ol>
+    
+    </div>
+  </aside>
 
 </section>
         
@@ -313,6 +421,8 @@
 
 
 
+  <script src="/js/dialog.js"></script>
+
 
 
 
@@ -396,6 +506,8 @@
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
 </body>
 </html>
