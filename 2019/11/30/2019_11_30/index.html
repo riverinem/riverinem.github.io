@@ -11,15 +11,15 @@
   
   
   
-  <meta name="description" content="前言本篇文章旨在将以往工作中SQL的应用进行梳理，查漏补缺，形成概念；比如接到业务需求不清楚从何下手，或者知道如何操作，但是沟通中不清楚如何阐述，缺乏专业术语等。 查询1）基本查询：select * from 2）条件查询：select * from &amp;lt;表名&amp;gt; where &amp;lt;条件表达式&amp;gt;  &amp;lt;条件1&amp;gt; AND &amp;lt;条件2&amp;gt; &amp;lt;条件1&amp;gt; OR">
+  <meta name="description" content="前言本篇文章旨在将以往工作中SQL的应用进行梳理，查漏补缺，形成概念；比如接到业务需求不清楚从何下手，或者知道如何操作，但是沟通中不清楚如何阐述，缺乏专业术语等。 查询1⃣️基本查询：select * from 2⃣️条件查询：select * from &amp;lt;表名&amp;gt; where &amp;lt;条件表达式&amp;gt;  &amp;lt;条件1&amp;gt; AND &amp;lt;条件2&amp;gt; &amp;lt;条件1&amp;gt;">
 <meta name="keywords" content="技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL概念与应用">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;2019_11_30&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言本篇文章旨在将以往工作中SQL的应用进行梳理，查漏补缺，形成概念；比如接到业务需求不清楚从何下手，或者知道如何操作，但是沟通中不清楚如何阐述，缺乏专业术语等。 查询1）基本查询：select * from 2）条件查询：select * from &amp;lt;表名&amp;gt; where &amp;lt;条件表达式&amp;gt;  &amp;lt;条件1&amp;gt; AND &amp;lt;条件2&amp;gt; &amp;lt;条件1&amp;gt; OR">
+<meta property="og:description" content="前言本篇文章旨在将以往工作中SQL的应用进行梳理，查漏补缺，形成概念；比如接到业务需求不清楚从何下手，或者知道如何操作，但是沟通中不清楚如何阐述，缺乏专业术语等。 查询1⃣️基本查询：select * from 2⃣️条件查询：select * from &amp;lt;表名&amp;gt; where &amp;lt;条件表达式&amp;gt;  &amp;lt;条件1&amp;gt; AND &amp;lt;条件2&amp;gt; &amp;lt;条件1&amp;gt;">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-30T15:38:23.571Z">
+<meta property="og:updated_time" content="2019-11-30T15:41:52.645Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -196,18 +196,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本篇文章旨在将以往工作中SQL的应用进行梳理，查漏补缺，形成概念；比如接到业务需求不清楚从何下手，或者知道如何操作，但是沟通中不清楚如何阐述，缺乏专业术语等。</p>
-<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p>1）基本查询：select * from</p>
-<p>2）条件查询：select * from &lt;表名&gt; where &lt;条件表达式&gt;</p>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p>1⃣️基本查询：select * from</p>
+<p>2⃣️条件查询：select * from &lt;表名&gt; where &lt;条件表达式&gt;</p>
 <ul>
 <li>&lt;条件1&gt; AND &lt;条件2&gt;</li>
 <li>&lt;条件1&gt; OR &lt;条件2&gt;</li>
 <li>NOT &lt;条件&gt;</li>
 <li>(&lt;条件1&gt; OR &lt;条件2&gt;) AND &lt;条件3&gt;</li>
 </ul>
-<p>3）投影查询：select &lt;字段1&gt;，&lt;字段2&gt;，&lt;字段3&gt; from &lt;表名&gt;</p>
-<p>4）排序查询：select * from &lt;表名&gt; ORDER BY &lt;字段1&gt;，&lt;字段2&gt;</p>
-<p>5）分页查询：LIMIT <M> OFFSET <N>   截取 第m条到n条的数据</p>
-<p>6）聚合查询：</p>
+<p>3⃣️投影查询：select &lt;字段1&gt;，&lt;字段2&gt;，&lt;字段3&gt; from &lt;表名&gt;</p>
+<p>4⃣️排序查询：select * from &lt;表名&gt; ORDER BY &lt;字段1&gt;，&lt;字段2&gt;</p>
+<p>5⃣️分页查询：LIMIT <M> OFFSET <N>   截取 第m条到n条的数据</p>
+<p>6⃣️聚合查询：</p>
 <ul>
 <li>COUNT() 某列个数</li>
 <li>SUM () 某列合值</li>
@@ -215,22 +215,22 @@
 <li>MAX () 某列最大</li>
 <li>MIN () 某列最小</li>
 </ul>
-<p>7）多表查询：</p>
+<p>7⃣️多表查询：</p>
 <ul>
 <li>SELECT * FROM &lt;表1&gt;, &lt;表2&gt;; 返回的为两表乘积</li>
-<li>SELECT &lt;A.id Aid&gt;,&lt;B.id Bid&gt; FROM  <A>, <B>；返回多个某表某字段段数据，替换字段名</li>
-<li>&lt;表名/列名&gt; +&lt;空格&gt;+ &lt;替换名&gt;，返回的数据以替换名呈现；</li>
+<li>SELECT &lt;A.id Aid&gt;,&lt;B.id Bid&gt; FROM  <A>, <B> 返回多个某表某字段段数据，替换字段名</li>
+<li>&lt;表名/列名&gt; +&lt;空格&gt;+ &lt;替换名&gt;，返回的数据以替换名呈现</li>
 </ul>
-<p>8）连接查询：</p>
+<p>8⃣️连接查询：</p>
 <ul>
-<li>FROM &lt;表1&gt; INNER JOIN &lt;表2&gt; 两张表都存在的记录；</li>
-<li>FROM &lt;表1&gt; LEFT OUTER JOIN &lt;表2&gt;  将表2的数据加到表1上；</li>
-<li>FROM &lt;表1&gt; RIGHT OUTER JOIN &lt;表2&gt;  将表1的数据加到表2上；</li>
-<li>FROM &lt;表1&gt; FULL OUTER JOIN &lt;表2&gt;  选出两表都存在的记录；</li>
+<li>FROM &lt;表1&gt; INNER JOIN &lt;表2&gt; 两张表都存在的记录</li>
+<li>FROM &lt;表1&gt; LEFT OUTER JOIN &lt;表2&gt;  将表2的数据加到表1上</li>
+<li>FROM &lt;表1&gt; RIGHT OUTER JOIN &lt;表2&gt;  将表1的数据加到表2上</li>
+<li>FROM &lt;表1&gt; FULL OUTER JOIN &lt;表2&gt;  选出两表都存在的记录</li>
 </ul>
-<h2 id="增、删、改"><a href="#增、删、改" class="headerlink" title="增、删、改"></a>增、删、改</h2><p>1）增：INSERT INTO &lt;表名&gt; (字段1, 字段2, …) VALUES (值1, 值2, …)</p>
-<p>2）删：DELETE FROM &lt;表名&gt; WHERE …UPDATE：更新已有记录          </p>
-<p>3）改：&lt;表名&gt; SET 字段1=值1, 字段2=值2, … WHERE …</p>
+<h2 id="增、删、改"><a href="#增、删、改" class="headerlink" title="增、删、改"></a>增、删、改</h2><p>1⃣️增：INSERT INTO &lt;表名&gt; (字段1, 字段2, …) VALUES (值1, 值2, …)</p>
+<p>2⃣️删：DELETE FROM &lt;表名&gt; WHERE …UPDATE：更新已有记录          </p>
+<p>3⃣️改：&lt;表名&gt; SET 字段1=值1, 字段2=值2, … WHERE …</p>
 <p>更多参考:<br><a href="https://www.runoob.com/sql/sql-tutorial.html" target="_blank" rel="noopener">菜鸟SQL</a><br><a href="https://www.liaoxuefeng.com/wiki/1177760294764384" target="_blank" rel="noopener">廖雪峰SQL</a></p>
 
       
