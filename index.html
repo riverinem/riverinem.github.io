@@ -158,16 +158,13 @@
     
 
     
-      <div id="homelogo" class="homelogo" style="background: rgba(255,255,255,1);"> 
+      <div id="homelogo" class="homelogo"> 
     
 
         
-          <div class="homelogoback"  style="border: 1px solid #404040;" >
-            <h1><a href="#content" id="logo">Hexo</a></h1>
-            <h3></h3>
-            <h5>John Doe</h5>
-            <!-- <p><a href="https://github.com/iTimeTraveler" target="_blank">Github</a></p> -->
-          </div>
+          
+            <img id="homelogoimg" src="/css/images/black_home_logo.svg" >
+          
         
     
     </div>
@@ -179,14 +176,17 @@
  <!-- home_logo_image居中 -->
  
     <script>
+        var img = new Image();
         var homelogodiv = document.getElementById("homelogo");
-        if (document.all.homelogo.offsetWidth > document.body.clientWidth) {
-          homelogodiv.style.width = document.body.clientWidth + "px";
-          homelogodiv.style.marginLeft = document.body.clientWidth * -0.5 + "px";
-        } else {
-          homelogodiv.style.width = homelogodiv.clientWidth  + "px";
-          homelogodiv.style.marginLeft = (homelogodiv.clientWidth)  * -0.5 + "px";
-        }
+        img.src = document.getElementById("homelogoimg").src;
+        img.onload=function(){
+          if (img.width > document.body.clientWidth) {
+            document.getElementById("homelogoimg").style.width = document.body.clientWidth + "px";
+            homelogodiv.style.marginLeft = document.body.clientWidth * -0.5 + "px";
+          } else {
+            homelogodiv.style.marginLeft = img.width * -0.5 + "px";
+          }
+        };
     </script>
   
 
@@ -238,11 +238,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-前言本篇是回顾年中时参加的由普禾资本旗下研究院与XXY Innovation组织的「智能语音语义与图像技术应用创新工作坊」，工作坊围绕 声希科技的语音、语义及图像等核心技术，利用设计思维等相关工具和方法论，开展技术创新应用及商业模式的研讨。本次研讨以PM身份作为被邀对象，与业界技术专家、投资人、设计总监和教授等，在XXY Innovation创始人、著名设计学者辛向阳教授的指导下，参与技术产品化的讨论。本文将主要聚焦在服务设计方法和工具的介绍与应用上：
+          前言本篇是回顾年中时参加的由普禾资本旗下研究院与XXY Innovation组织的「智能语音语义与图像技术应用创新工作坊」，工作坊围绕 声希科技的语音、语义及图像等核心技术，利用设计思维等相关工具和方法论，开展技术创新应用及商业模式的研讨。本次研讨以PM身份作为被邀对象，与业界技术专家、投资人、设计总监和教授等，在XXY Innovation创始人、著名设计学者辛向阳教授的指导下，参与技术产品化的讨论。本文将主要聚焦在服务设计方法和工具的介绍与应用上：
 
 INPD整合新产品开发流程
-VO...
+VOA...
         </p>
         <p class="article-more-link">
           <a href="/2019/12/01/2019_12_01/#more">Read More</a>
