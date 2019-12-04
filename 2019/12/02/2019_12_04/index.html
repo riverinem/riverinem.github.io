@@ -20,7 +20,7 @@
 <meta property="og:description" content="前言技术发展的浪潮从PC互联网时代，移动互联网时代发展至如今的AIOT时代，在每一次变革的背后实际上是人机交互方式的变化：从鼠键交互到触控交互，再到语音交互，人机交互的方式在向更自然、智能的方向上演进，而在智能交互的背后，是更加智能和带有推理性的数据与数据间的交互，目前在知识图谱技术的应用上得到了很好的体现，不仅应用于KBQA机器人，同时也在检索型、任务型和闲聊型的产品中都有应用。 智能对话系统有">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;upload.zcool.com.cn&#x2F;image&#x2F;10297859&#x2F;3&#x2F;community&#x2F;011deb5de51c13a80120686b8a0534.jpg@1280w_1l_2o_100sh.jpg">
-<meta property="og:updated_time" content="2019-12-04T10:17:41.452Z">
+<meta property="og:updated_time" content="2019-12-04T10:20:53.636Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;upload.zcool.com.cn&#x2F;image&#x2F;10297859&#x2F;3&#x2F;community&#x2F;011deb5de51c13a80120686b8a0534.jpg@1280w_1l_2o_100sh.jpg">
   
@@ -257,30 +257,25 @@
 <p>在实际项目中，服务商在为B端客户构建KBQA Bot产品时，会遇到：如果合作的每一个客户都需要单独建立知识图谱，因为不同行业的客户所需要的知识领域也不同，比如医疗行业需要医疗的图谱，金融行业需要金融的图谱，一般的服务商难以像淘宝天猫这样有这么大体量的数据和人力去构建一个百亿规模的知识图谱(这里“百亿”指三元组数量)，否则不但客户会觉得成本高，服务商自己也承受不起。又或者在面对B端客户时，服务商会因为对客户业务对不了解，以及客户对技术理解的匮乏，导致前期沟通成本较高。一个非常简单而又有效的方式是</p>
 <p>所以一般在做这类项目时：1）从客户现有的FAQ知识库出发，快速地归纳Schema和知识图谱；2）为了进一步降低成本，会协调资源专门做一类或几类ROI高的方向，比如提供金融领域、政务领域的智能问答解决方案。</p>
 <h2 id="Chat-Bot"><a href="#Chat-Bot" class="headerlink" title="Chat-Bot"></a>Chat-Bot</h2><p>实际业务场景中，用户与系统的对话难免会涉及到闲聊部分。闲聊功能可以让对话机器人更有情感和温度。Chat Bot通常使用机器翻译中的深度学习seq2seq框架来产生答复。不同的是，该场景下，用户的query通常不像特定领域的Bot那样可以产生合理的答复，设计的时候还需要纳入当前对话的上下文、用户画像等因素，从而产生更多样化以及信息量的答复才是目的。</p>
-<h2 id="概念解释"><a href="#概念解释" class="headerlink" title="概念解释*"></a>概念解释*</h2><blockquote>
-<p><strong><em>知识图谱</em></strong><br>知识图谱是由一条条知识组成，每条知识都可以表示为一个SPO三元组(Subject-Predicate-Object)。构建知识图谱非常重要的一点是从非结构化数据中抽象出符合业务场景的schema，可以理解为一个框架，它包含实体、属性、关系。</p>
-</blockquote>
+<h2 id="概念解释"><a href="#概念解释" class="headerlink" title="概念解释*"></a>概念解释*</h2><p> <strong><em>知识图谱</em></strong></p>
 <blockquote>
-<p><strong><em>Schema</em></strong><br>在实际构建知识库的应用中，在将文本数据或者是现实世界中的知识表示成RDF数据之前，需要用到RDF典，即schema。用户可以方便的将现实中的知识映射成RDF Graph. 通过复用Schema有利于数据的开放共享，同时避免重复劳动。一般定义Schema有两种方式，一是自上而下，而是自下而上。</p>
+<p>知识图谱是由一条条知识组成，每条知识都可以表示为一个SPO三元组(Subject-Predicate-Object)。构建知识图谱非常重要的一点是从非结构化数据中抽象出符合业务场景的schema，可以理解为一个框架，它包含实体、属性、关系。</p>
 </blockquote>
+<p> <strong><em>Schema</em></strong></p>
 <blockquote>
-<p><strong><em>RDF</em></strong><br>RDF 全称为 Resource Deion Framework，即资源描述框架。它最初是在语义网背景下设计出来，以三元组形式描述资源的一种数据模型。</p>
+<p>在实际构建知识库的应用中，在将文本数据或者是现实世界中的知识表示成RDF数据之前，需要用到RDF典，即schema。用户可以方便的将现实中的知识映射成RDF Graph. 通过复用Schema有利于数据的开放共享，同时避免重复劳动。一般定义Schema有两种方式，一是自上而下，而是自下而上。</p>
 </blockquote>
-<ul>
-<li>R 代表 Resource，即资源，任何可以被唯一标识的对象，如，页、地点、人、事件；</li>
-<li>D 代表 Description，即资源属性的描述和资源间关系的描述；</li>
-<li>F 则是指 Framework，即为资源描述提供了语言和模型。</li>
-</ul>
+<p><strong><em>RDF</em></strong></p>
 <blockquote>
-<p><strong><em>Triple(三元组)</em></strong><br>RDF对资源(Resource)的陈述(statement)，一般用三元组 (triple)表示，即SPO：</p>
+<p>RDF 全称为 Resource Deion Framework，即资源描述框架。它最初是在语义网背景下设计出来，以三元组形式描述资源的一种数据模型。<br>R，代表 Resource，即资源，任何可以被唯一标识的对象，如，页、地点、人、事件；<br>D，代表 Description，即资源属性的描述和资源间关系的描述；<br>F，代表Framework，即为资源描述提供了语言和模型。</p>
 </blockquote>
-<ul>
-<li>Subject：主语</li>
-<li>Predicate：谓语</li>
-<li>Object：宾语<br>SPO用来表示事物的一种方法和形式。</li>
-</ul>
+<p><strong><em>Triple(三元组)</em></strong></p>
 <blockquote>
-<p><strong><em>SPARQL</em></strong><br>SPARQL是针对RDF数据进行结构化查询的语言，可以理解为关系型数据库中的SQL语句。</p>
+<p>RDF对资源(Resource)的陈述(statement)，一般用三元组 (triple)表示，即SPO：<br>Subject：主语<br>Predicate：谓语<br>Object：宾语<br>SPO用来表示事物的一种方法和形式。</p>
+</blockquote>
+<p><strong><em>SPARQL</em></strong></p>
+<blockquote>
+<p>SPARQL是针对RDF数据进行结构化查询的语言，可以理解为关系型数据库中的SQL语句。</p>
 </blockquote>
 
       
