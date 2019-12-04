@@ -6,22 +6,22 @@
   <title>智能对话产品及背后的技术梳理 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="技术产品思考" />
+  <meta name="keywords" content="智能客服知识图谱问答系统" />
   
   
   
   
-  <meta name="description" content="前言技术发展的浪潮从PC互联网时代，移动互联网时代发展至如今的AIOT时代，在每一次变革的背后实际上是人机交互方式的变化：从鼠键交互到触控交互，再到语音交互，人机交互的方式在向更自然、智能的方向上演进，而在智能交互的背后，是更加智能和带有推理性的数据与数据间的交互，目前在知识图谱技术的应用上得到了很好的体现。本篇主要阐述主流的智能对话产品以及相应的技术（文中不完善的地方，我会有空补充更新） 交互类">
-<meta name="keywords" content="技术,产品,思考">
+  <meta name="description" content="前言技术发展的浪潮从PC互联网时代，移动互联网时代发展至如今的AIOT时代，在每一次变革的背后实际上是人机交互方式的变化：从鼠键交互到触控交互，再到语音交互，人机交互的方式在向更自然、智能的方向上演进，而在智能交互的背后，是更加智能和带有推理性的数据与数据间的交互，目前在知识图谱技术的应用上得到了很好的体现，不仅应用于KBQA机器人，同时也在检索型、任务型和闲聊型的产品中都有应用。智能对话系统有一">
+<meta name="keywords" content="智能客服,知识图谱,问答系统">
 <meta property="og:type" content="article">
 <meta property="og:title" content="智能对话产品及背后的技术梳理">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;02&#x2F;2019_12_04&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言技术发展的浪潮从PC互联网时代，移动互联网时代发展至如今的AIOT时代，在每一次变革的背后实际上是人机交互方式的变化：从鼠键交互到触控交互，再到语音交互，人机交互的方式在向更自然、智能的方向上演进，而在智能交互的背后，是更加智能和带有推理性的数据与数据间的交互，目前在知识图谱技术的应用上得到了很好的体现。本篇主要阐述主流的智能对话产品以及相应的技术（文中不完善的地方，我会有空补充更新） 交互类">
+<meta property="og:description" content="前言技术发展的浪潮从PC互联网时代，移动互联网时代发展至如今的AIOT时代，在每一次变革的背后实际上是人机交互方式的变化：从鼠键交互到触控交互，再到语音交互，人机交互的方式在向更自然、智能的方向上演进，而在智能交互的背后，是更加智能和带有推理性的数据与数据间的交互，目前在知识图谱技术的应用上得到了很好的体现，不仅应用于KBQA机器人，同时也在检索型、任务型和闲聊型的产品中都有应用。智能对话系统有一">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;upload.zcool.com.cn&#x2F;image&#x2F;10297859&#x2F;3&#x2F;community&#x2F;011deb5de51c13a80120686b8a0534.jpg@1280w_1l_2o_100sh.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;upload.zcool.com.cn&#x2F;image&#x2F;10297859&#x2F;3&#x2F;community&#x2F;01522a5de7270ca801209568f5aba6.png@1280w_1l_2o_100sh.png">
-<meta property="og:updated_time" content="2019-12-04T09:21:47.330Z">
+<meta property="og:updated_time" content="2019-12-04T10:04:11.893Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;upload.zcool.com.cn&#x2F;image&#x2F;10297859&#x2F;3&#x2F;community&#x2F;011deb5de51c13a80120686b8a0534.jpg@1280w_1l_2o_100sh.jpg">
   
@@ -192,65 +192,42 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>技术发展的浪潮从PC互联网时代，移动互联网时代发展至如今的AIOT时代，在每一次变革的背后实际上是人机交互方式的变化：从鼠键交互到触控交互，再到语音交互，人机交互的方式在向更自然、智能的方向上演进，而在智能交互的背后，是更加智能和带有推理性的数据与数据间的交互，目前在知识图谱技术的应用上得到了很好的体现。本篇主要阐述主流的智能对话产品以及相应的技术（文中不完善的地方，我会有空补充更新）</p>
-<h2 id="交互类型"><a href="#交互类型" class="headerlink" title="交互类型"></a>交互类型</h2><p>目前主流的智能对话产品可以划分为四类：<br>| QA Bot | Task Bot | KBQA | Chat Bot |<br>| :—-:| :—-: | :—-: | :—-: |<br>| 单轮对话 | 多轮对话 | 多轮对话 | 多轮对话 |<br>| 特定领域 | 特定领域 | 特定领域 | 开放领域 |<br>| 解决常见问题 | 解决复杂任务 | 解决特定问题 | 不解决问题 |</p>
-<h2 id="QA-Bot"><a href="#QA-Bot" class="headerlink" title="QA-Bot"></a>QA-Bot</h2><p>FAQ是检索型机器人中比较经典的应用，业务方对用户的文法进行统计而整理的标准问答集；实际运用中，通过QA匹和QQ匹配，比如当用户输入问题，系统会检索与它最相似的问题，并返回与该问题对应的标准回答给用户，然后进入下一个环节</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>技术发展的浪潮从PC互联网时代，移动互联网时代发展至如今的AIOT时代，在每一次变革的背后实际上是人机交互方式的变化：从鼠键交互到触控交互，再到语音交互，人机交互的方式在向更自然、智能的方向上演进，而在智能交互的背后，是更加智能和带有推理性的数据与数据间的交互，目前在知识图谱技术的应用上得到了很好的体现，不仅应用于KBQA机器人，同时也在检索型、任务型和闲聊型的产品中都有应用。智能对话系统有一个主要目标就是提高人效，通过将多种复杂的业务场景像微信一样集中到聊天界面，引导用户去自助完成，而不是通过传统的人工客服一对一去沟通，这样不仅可以减轻客服人员的压力；另一方面，CUI式的交互是接近人类自然沟通的交互方式，在用户体验上也会更加好。</p>
+<p>在真实业务中，会应用多个不同类型的Bot协同合作，解答用户不同类型的问题；一般会把协调不同机器人工作的机器人称之为路由机器人（Route-Bot），也可以称之为中控。路由机器人会根据历史背景和当前query，再决定把问题流转给子机器人。目前主流的智能对话产品可以划分为四类：</p>
+<table>
+<thead>
+<tr>
+<th align="center">QA-Bot</th>
+<th align="center">Task-Bot</th>
+<th align="center">KBQA</th>
+<th align="center">Chat-Bot</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">单轮对话</td>
+<td align="center">多轮对话</td>
+<td align="center">多轮对话</td>
+<td align="center">多轮对话</td>
+</tr>
+<tr>
+<td align="center">特定领域</td>
+<td align="center">特定领域</td>
+<td align="center">特定领域</td>
+<td align="center">开放领域</td>
+</tr>
+<tr>
+<td align="center">解决常见问题</td>
+<td align="center">解决复杂任务</td>
+<td align="center">解决特定问题</td>
+<td align="center">不解决问题</td>
+</tr>
+</tbody></table>
+<p>另一方面，在实际的应用中，不乏人为的对系统进行干预，比如在智能客服产品中，人工坐席、运营人员与Bot协作，这是因为：<br>1）算法模型的部署更新周期较长，从数天至一周，通过人工运营可以即时将线上的badcase给fix。<br>2）针对业务场景中的高频badcase，通过抽样评测和每日全量数据的检测，经业务人员人工修正再同步到线上系统，以提高回复准确率。</p>
+<h2 id="QA-Bot"><a href="#QA-Bot" class="headerlink" title="QA-Bot"></a>QA-Bot</h2><p>FAQ是检索型机器人中比较经典的应用，业务方对用户的高频问法进行统计而整理，并返回给目标用户。</p>
 <p><img src="https://upload.zcool.com.cn/image/10297859/3/community/011deb5de51c13a80120686b8a0534.jpg@1280w_1l_2o_100sh.jpg" alt="检索式交互-FAQ"></p>
-<p><strong><em>业务问题</em></strong></p>
-<p>1）<strong><em>训练集如何准备？</em></strong> 业务方提供了几千上百个FAQ标准问答，分类模型的训练语料如何准备？一般需要根据具体业务而言，比如要构建一个细分领域的问答系统，诸如理财、保险产品的咨询场景，一般会通过公网产品如百度知道、百度贴吧、知乎中去采集数据，数据质量越高，问答系统检索的效果越好，当然这仅仅是训练集准备的方法之一。</p>
-<p>2）<strong><em>训练集数据不均匀怎么办？</em></strong> 那么多标准问，采集的Q语料数据不均匀，有些标准问无人问津怎么办？遇到这种情况，就需要做 Data Transfer的工作，找寻与标准问相似且有许多表述的其他标准问，或者通过人工定义一些规则，通过机器生成虚拟样本。</p>
-<p>3）<strong><em>场景单一如何解决？</em></strong> FAQ形式的Bot一般只适用于单轮对话的交互，很难根据业务场景、上下文带来更好体验，另外在一些2B项目中，客户并不会将用户画像数据提供给服务商。由于单轮对话在交互形式和表达上带来的用户体验有限，一般从产品角度，会通过当前对话数据、用户画像数据、日志数据来为用户构建更多的推荐场景，比如「猜你想问」模块。</p>
-<h2 id="Task-Bot"><a href="#Task-Bot" class="headerlink" title="Task-Bot"></a>Task-Bot</h2><p>任务型机器人（Task-Bot）通过多次与用户对话交互来辅助用户完成某项明确具体的任务。</p>
-<blockquote>
-<p>什么是 <strong><em>封闭场景</em></strong><br>1）用户的交互意图和需求在确定性范围；<br>2）用户的问题在知识与资源上处于封闭、收敛空间；<br>3）案例：<br>    - 到店点餐场景：用户的点餐意图是确定的，用户可选的商家和菜品也都是确定的；<br>    - 机票预订场景：用户的订票意图是确定的，飞机起落地点、仓位、价格、人数也是确定的；<br>    - 打车出行场景：用户的出行意图是确定的，车辆起始地点也是确定的</p>
-</blockquote>
-<h2 id="KBQA"><a href="#KBQA" class="headerlink" title="KBQA"></a>KBQA</h2><p>从传统智能问答到知识图谱问答，第一个重要变化是<u>引入知识图谱</u>。第二个重要变化是在<u>语言理解算法从分类或匹配算法改为语义分析(Semantic Parsing)算法</u>。传统智能问答在语言理解部分只需要将用户问题映射为一个标准问题,即上文描述的FAQ类，而Semantic Parsing则需要对用户问题进行深入理解，并输出一个结构化的语义表达式，直接从知识图谱中查询答案，或者经过推理后产生相应的答案。比较知名的案例就是，Google为了提升搜索引擎返回的答案质量和用户查询的效率，于2012年5月16日发布了知识图谱(Knowledge Graph)。有知识图谱作为辅助，搜索引擎能够洞察用户查询背后的语义信息，返回更为精准、结构化的信息，更大可能地满足用户的查询需求。</p>
-<p>KBQA，比较直白的描述就是 <strong><em>把用户的问题转换为机器的查询语句，直接查询知识图谱获取答案</em></strong> 。传统的问答系统通过QA/QQ匹配，KBQA则通过抽取用户query中的实体词和语义结构，与知识库中RDF三元组映射，最后通过图谱计算，返回对应的属性值/关系，并生成自然语言。所以客观上讲，知识图谱就是由一些相互连接的实体和他们的属性构成的。</p>
-<p><strong><em>业务问题</em></strong></p>
-<p>在实际项目中，服务商在为B端客户构建KBQA Bot产品时，会遇到：如果合作的每一个客户都需要单独建立知识图谱，因为不同行业的客户所需要的知识领域也不同，比如医疗行业需要医疗的图谱，金融行业需要金融的图谱，一般的服务商难以像淘宝天猫这样有这么大体量的数据和人力去构建一个百亿规模的知识图谱(这里“百亿”指三元组数量)，否则不但客户会觉得成本高，服务商自己也承受不起。又或者在面对B端客户时，服务商会因为对客户业务对不了解，以及客户对技术理解的匮乏，导致前期沟通成本较高。一个非常简单而又有效的方式是</p>
-<p>所以一般在做这类项目时：1）从客户现有的FAQ知识库出发，快速地归纳Schema和知识图谱；2）为了进一步降低成本，会协调资源专门做一类或几类ROI高的方向，比如提供金融领域、政务领域的智能问答解决方案。</p>
-<blockquote>
-</blockquote>
-<p><strong><em>什么是知识库</em></strong><br>知识库（knowledge base）是基于知识管理的一种特殊的数据库，用于相关领域知识的采集、整理及提取。知识库中的知识源于领域专家，是求解问题所需领域的知识集合。知识库一般采用RDF格式对其中的知识进行表示，知识的查询主要采用RDF标准查询语言SPAEQL。</p>
-<blockquote>
-</blockquote>
-<p><strong><em>什么是KBQA</em></strong><br>KBQA是基于知识库基础上构建的问答系统，也是目前最主流的问答系统。常见的知识库有Freebase、DBpedia。</p>
-<blockquote>
-</blockquote>
-<p><strong><em>什么是知识图谱</em></strong><br>知识图谱是由一条条知识组成，每条知识都可以表示为一个SPO三元组(Subject-Predicate-Object)。构建知识图谱非常重要的一点是从非结构化数据中抽象出符合业务场景的schema，可以理解为一个框架，它包含实体、属性、关系。</p>
-<blockquote>
-</blockquote>
-<p><strong><em>什么是Schema</em></strong><br>在实际构建知识库的应用中，在将文本数据或者是现实世界中的知识表示成RDF数据之前，需要用到RDF典，即schema。用户可以方便的将现实中的知识映射成RDF Graph. 通过复用Schema有利于数据的开放共享，同时避免重复劳动。一般定义Schema有两种方式，一是自上而下，而是自下而上。</p>
-<blockquote>
-</blockquote>
-<p><strong><em>什么是RDF</em></strong><br>RDF 全称为 Resource Deion Framework，即资源描述框架。它最初是在语义网背景下设计出来，以三元组形式描述资源的一种数据模型。</p>
-<ul>
-<li>R 代表 Resource，即资源，任何可以被唯一标识的对象，如，页、地点、人、事件；</li>
-<li>D 代表 Description，即资源属性的描述和资源间关系的描述；</li>
-<li>F 则是指 Framework，即为资源描述提供了语言和模型。</li>
-</ul>
-<blockquote>
-</blockquote>
-<p><strong><em>什么是Triple(三元组)</em></strong><br>RDF对资源(Resource)的陈述(statement)，一般用三元组 (triple)表示，即SPO：</p>
-<ul>
-<li>Subject：主语</li>
-<li>Predicate：谓语</li>
-<li>Object：宾语<br>SPO用来表示事物的一种方法和形式。</li>
-</ul>
-<blockquote>
-</blockquote>
-<p><strong><em>什么是SPARQL</em></strong><br>SPARQL是针对RDF数据进行结构化查询的语言，可以理解为关系型数据库中的SQL语句。</p>
-<h2 id="Chat-Bot"><a href="#Chat-Bot" class="headerlink" title="Chat-Bot"></a>Chat-Bot</h2><p>实际业务场景中，用户与系统的对话难免会涉及到闲聊部分。闲聊功能可以让对话机器人更有情感和温度。Chat Bot通常使用机器翻译中的深度学习seq2seq框架来产生答复。不同的是，该场景下，用户的query通常不像特定领域的Bot那样可以产生合理的答复，设计的时候还需要纳入当前对话的上下文、用户画像等因素，从而产生更多样化以及信息量的答复才是目的。</p>
-<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><p>1）产品</p>
-<ul>
-<li>上文中谈到的知识图谱技术，其实并不是只有KBQA中才应用了图谱技术，实际上在检索型、任务型和闲聊型交互机器人中都会有应用。</li>
-<li>真实应用中，一方面会有多个不同类型的Bot协同合作，解答用户不同类型的问题；另一方面，会通过人机合作，比如在智能客服产品中，不乏人工坐席、运营人员与Bot协作。</li>
-<li>工业界会把协调不同机器人工作的机器人称之为路由机器人（Route-Bot），也可以称之为中控。路由机器人会根据历史背景和当前query，再决定把问题流转给子机器人。</li>
-<li>智能客服系统有一个主要目标就是提高人效，通过将多种复杂的业务场景像微信一样集中到聊天界面，引导用户去自助完成，而不是通过传统的人工客服一对一去沟通，这样不仅可以减轻客服人员的压力，也能提升用户体验。</li>
-</ul>
-<p>1）算法-语义识别</p>
+<p>实际运用中，常通过QA匹配和QQ匹配，比如当用户输入问题，系统会检索与它最相似的问题，并返回与该问题对应的标准回答给用户，然后进入下一个环节。QA-Bot中比较重要的一块就是语义识别，主要是分类算法和匹配算法两大类。</p>
 <p><img src="https://upload.zcool.com.cn/image/10297859/3/community/01522a5de7270ca801209568f5aba6.png@1280w_1l_2o_100sh.png" alt="语义识别流程"></p>
-<p>从上图可以知道，语义识别涉及到以下几类算法：</p>
+<p>具体算法如下：</p>
 <ul>
 <li><strong><em>基于匹配的识别：</em></strong> 将用户Query通过分词建立倒排索引，计算该问法占各个标准问中的权重；</li>
 <li><strong><em>基于深度学习的识别:</em></strong><ul>
@@ -267,9 +244,46 @@
 <li><strong><em>基于实例的识别:</em></strong> 计算Query与Top候选问的相似度。</li>
 <li><strong><em>基于业务模型的意图过滤:</em></strong></li>
 </ul>
-<p>拓展参考：<br><a href="https://blog.csdn.net/weixin_38118016/article/details/90416391" target="_blank" rel="noopener">倒排索引与分词</a></p>
-<p>3）客服运营</p>
-<p><strong><em>为什么需要客服运营？</em></strong><br>1）因为算法模型的更新周期较长，从数天至一周，通过人工运营可以即时将badcase给去掉。<br>2）针对业务场景中的高频badcase，通过抽样评测和每日全量数据的检测，经业务人员人工修正再同步到线上系统，以提高回复准确率。</p>
+<p>参考：<br><a href="https://blog.csdn.net/weixin_38118016/article/details/90416391" target="_blank" rel="noopener">倒排索引与分词</a></p>
+<p><strong><em>业务问题</em></strong></p>
+<p>1）<strong><em>训练集如何准备？</em></strong> 业务方提供了几千上百个FAQ标准问答，分类模型的训练语料如何准备？一般需要根据具体业务而言，比如要构建一个细分领域的问答系统，诸如理财、保险产品的咨询场景，一般会通过公网产品如百度知道、百度贴吧、知乎中去采集数据，数据质量越高，问答系统检索的效果越好，当然这仅仅是训练集准备的方法之一。</p>
+<p>2）<strong><em>训练集数据不均匀怎么办？</em></strong> 那么多标准问，采集的Q语料数据不均匀，有些标准问无人问津怎么办？遇到这种情况，就需要做 Data Transfer的工作，找寻与标准问相似且有许多表述的其他标准问，或者通过人工定义一些规则，通过机器生成虚拟样本。</p>
+<p>3）<strong><em>场景单一如何解决？</em></strong> FAQ形式的Bot一般只适用于单轮对话的交互，很难根据业务场景、上下文带来更好体验，另外在一些2B项目中，客户并不会将用户画像数据提供给服务商。由于单轮对话在交互形式和表达上带来的用户体验有限，一般从产品角度，会通过当前对话数据、用户画像数据、日志数据来为用户构建更多的推荐场景，比如在某时打开阿里小蜜界面，「猜你想问」模块会根据以往的聊天记录推荐相关的内容给你，但是在智能客服厂商的角度，因为没有用户数据，往往在推荐时只能根据用户实时的query去推荐相似的标准问。</p>
+<h2 id="Task-Bot（待补充）"><a href="#Task-Bot（待补充）" class="headerlink" title="Task-Bot（待补充）"></a>Task-Bot（待补充）</h2><p>任务型机器人（Task-Bot）通过多次与用户对话交互来辅助用户完成某项明确具体的任务，一般是在封闭场景下的应用。</p>
+<blockquote>
+<p>什么是 <strong><em>封闭场景</em></strong><br>1）用户的交互意图和需求在确定性范围；<br>2）用户的问题在知识与资源上处于封闭、收敛空间；<br>3）案例：<br>    - 到店点餐场景：用户的点餐意图是确定的，用户可选的商家和菜品也都是确定的；<br>    - 机票预订场景：用户的订票意图是确定的，飞机起落地点、仓位、价格、人数也是确定的；<br>    - 打车出行场景：用户的出行意图是确定的，车辆起始地点也是确定的</p>
+</blockquote>
+<h2 id="KBQA"><a href="#KBQA" class="headerlink" title="KBQA"></a>KBQA</h2><p>从传统智能问答到知识图谱问答，第一个重要变化是<u>引入知识图谱</u>。第二个重要变化是在<u>语言理解算法从分类或匹配算法改为语义分析(Semantic Parsing)算法</u>。传统智能问答在语言理解部分只需要将用户问题映射为一个标准问题,即上文描述的FAQ类，而Semantic Parsing则需要对用户问题进行深入理解，并输出一个结构化的语义表达式，直接从知识图谱中查询答案，或者经过推理后产生相应的答案。比较知名的案例就是，Google为了提升搜索引擎返回的答案质量和用户查询的效率，于2012年5月16日发布了知识图谱(Knowledge Graph)。有知识图谱作为辅助，搜索引擎能够洞察用户查询背后的语义信息，返回更为精准、结构化的信息，更大可能地满足用户的查询需求。</p>
+<p>KBQA，比较直白的描述就是 <strong><em>把用户的问题转换为机器的查询语句，直接查询知识图谱获取答案</em></strong> 。传统的问答系统通过QA/QQ匹配，KBQA则通过抽取用户query中的实体词和语义结构，与知识库中RDF三元组映射，最后通过图谱计算，返回对应的属性值/关系，并生成自然语言。所以客观上讲，知识图谱就是由一些相互连接的实体和他们的属性构成的。</p>
+<p><strong><em>业务问题：</em></strong></p>
+<p>在实际项目中，服务商在为B端客户构建KBQA Bot产品时，会遇到：如果合作的每一个客户都需要单独建立知识图谱，因为不同行业的客户所需要的知识领域也不同，比如医疗行业需要医疗的图谱，金融行业需要金融的图谱，一般的服务商难以像淘宝天猫这样有这么大体量的数据和人力去构建一个百亿规模的知识图谱(这里“百亿”指三元组数量)，否则不但客户会觉得成本高，服务商自己也承受不起。又或者在面对B端客户时，服务商会因为对客户业务对不了解，以及客户对技术理解的匮乏，导致前期沟通成本较高。一个非常简单而又有效的方式是</p>
+<p>所以一般在做这类项目时：1）从客户现有的FAQ知识库出发，快速地归纳Schema和知识图谱；2）为了进一步降低成本，会协调资源专门做一类或几类ROI高的方向，比如提供金融领域、政务领域的智能问答解决方案。</p>
+<h2 id="Chat-Bot（待补充）"><a href="#Chat-Bot（待补充）" class="headerlink" title="Chat-Bot（待补充）"></a>Chat-Bot（待补充）</h2><p>实际业务场景中，用户与系统的对话难免会涉及到闲聊部分。闲聊功能可以让对话机器人更有情感和温度。Chat Bot通常使用机器翻译中的深度学习seq2seq框架来产生答复。不同的是，该场景下，用户的query通常不像特定领域的Bot那样可以产生合理的答复，设计的时候还需要纳入当前对话的上下文、用户画像等因素，从而产生更多样化以及信息量的答复才是目的。</p>
+<h2 id="概念解释"><a href="#概念解释" class="headerlink" title="概念解释"></a>概念解释</h2><blockquote>
+</blockquote>
+<p><strong>什么是知识图谱</strong><br>知识图谱是由一条条知识组成，每条知识都可以表示为一个SPO三元组(Subject-Predicate-Object)。构建知识图谱非常重要的一点是从非结构化数据中抽象出符合业务场景的schema，可以理解为一个框架，它包含实体、属性、关系。</p>
+<blockquote>
+</blockquote>
+<p><strong>什么是Schema</strong><br>在实际构建知识库的应用中，在将文本数据或者是现实世界中的知识表示成RDF数据之前，需要用到RDF典，即schema。用户可以方便的将现实中的知识映射成RDF Graph. 通过复用Schema有利于数据的开放共享，同时避免重复劳动。一般定义Schema有两种方式，一是自上而下，而是自下而上。</p>
+<blockquote>
+</blockquote>
+<p><strong>什么是RDF</strong><br>RDF 全称为 Resource Deion Framework，即资源描述框架。它最初是在语义网背景下设计出来，以三元组形式描述资源的一种数据模型。</p>
+<ul>
+<li>R 代表 Resource，即资源，任何可以被唯一标识的对象，如，页、地点、人、事件；</li>
+<li>D 代表 Description，即资源属性的描述和资源间关系的描述；</li>
+<li>F 则是指 Framework，即为资源描述提供了语言和模型。</li>
+</ul>
+<blockquote>
+</blockquote>
+<p><strong>什么是Triple(三元组)</strong><br>RDF对资源(Resource)的陈述(statement)，一般用三元组 (triple)表示，即SPO：</p>
+<ul>
+<li>Subject：主语</li>
+<li>Predicate：谓语</li>
+<li>Object：宾语<br>SPO用来表示事物的一种方法和形式。</li>
+</ul>
+<blockquote>
+</blockquote>
+<p><strong>什么是SPARQL</strong><br>SPARQL是针对RDF数据进行结构化查询的语言，可以理解为关系型数据库中的SQL语句。</p>
 
       
     </div>
@@ -317,7 +331,7 @@ var a = new Donate({
       
       
         
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%A7%E5%93%81/" rel="tag">产品</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%80%9D%E8%80%83/" rel="tag">思考</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%99%BA%E8%83%BD%E5%AE%A2%E6%9C%8D/" rel="tag">智能客服</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/" rel="tag">知识图谱</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%97%AE%E7%AD%94%E7%B3%BB%E7%BB%9F/" rel="tag">问答系统</a></li></ul>
 
       
 
@@ -344,7 +358,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交互类型"><span class="nav-number">2.</span> <span class="nav-text">交互类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QA-Bot"><span class="nav-number">3.</span> <span class="nav-text">QA-Bot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Task-Bot"><span class="nav-number">4.</span> <span class="nav-text">Task-Bot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KBQA"><span class="nav-number">5.</span> <span class="nav-text">KBQA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chat-Bot"><span class="nav-number">6.</span> <span class="nav-text">Chat-Bot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展"><span class="nav-number">7.</span> <span class="nav-text">拓展</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QA-Bot"><span class="nav-number">2.</span> <span class="nav-text">QA-Bot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Task-Bot（待补充）"><span class="nav-number">3.</span> <span class="nav-text">Task-Bot（待补充）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KBQA"><span class="nav-number">4.</span> <span class="nav-text">KBQA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chat-Bot（待补充）"><span class="nav-number">5.</span> <span class="nav-text">Chat-Bot（待补充）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概念解释"><span class="nav-number">6.</span> <span class="nav-text">概念解释</span></a></li></ol>
     
     </div>
   </aside>
