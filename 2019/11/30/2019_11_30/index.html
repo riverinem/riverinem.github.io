@@ -6,21 +6,23 @@
   <title>sql概念与应用 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="技术" />
+  <meta name="keywords" content="技术学习" />
   
   
   
   
   <meta name="description" content="前言本篇文章旨在将以往工作中SQL的应用进行梳理，查漏补缺，形成概念；比如接到业务需求不清楚从何下手，或者知道如何操作，但是沟通中不清楚如何阐述，缺乏专业术语等。 查询基本查询：select * from 条件查询：select * from &amp;lt;表名&amp;gt; where &amp;lt;条件表达式&amp;gt;  &amp;lt;条件1&amp;gt; AND &amp;lt;条件2&amp;gt; &amp;lt;条件1&amp;gt; OR &amp;lt">
-<meta name="keywords" content="技术">
+<meta name="keywords" content="技术,学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL概念与应用">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;2019_11_30&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="前言本篇文章旨在将以往工作中SQL的应用进行梳理，查漏补缺，形成概念；比如接到业务需求不清楚从何下手，或者知道如何操作，但是沟通中不清楚如何阐述，缺乏专业术语等。 查询基本查询：select * from 条件查询：select * from &amp;lt;表名&amp;gt; where &amp;lt;条件表达式&amp;gt;  &amp;lt;条件1&amp;gt; AND &amp;lt;条件2&amp;gt; &amp;lt;条件1&amp;gt; OR &amp;lt">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-30T15:53:04.241Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;7157346&#x2F;64021626-fa6c1200-cb66-11e9-8742-23bc7d107532.png">
+<meta property="og:updated_time" content="2019-12-05T02:51:00.833Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;7157346&#x2F;64021626-fa6c1200-cb66-11e9-8742-23bc7d107532.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -190,17 +192,17 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本篇文章旨在将以往工作中SQL的应用进行梳理，查漏补缺，形成概念；比如接到业务需求不清楚从何下手，或者知道如何操作，但是沟通中不清楚如何阐述，缺乏专业术语等。</p>
-<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p><strong><em>基本查询</em></strong>：select * from</p>
-<p><strong><em>条件查询</em></strong>：select * from &lt;表名&gt; where &lt;条件表达式&gt;</p>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p><strong><em>基本查询</em></strong>：<br>select * from</p>
+<p><strong><em>条件查询</em></strong>：<br>select * from &lt;表名&gt; where &lt;条件表达式&gt;</p>
 <ul>
 <li>&lt;条件1&gt; AND &lt;条件2&gt;</li>
 <li>&lt;条件1&gt; OR &lt;条件2&gt;</li>
 <li>NOT &lt;条件&gt;</li>
 <li>(&lt;条件1&gt; OR &lt;条件2&gt;) AND &lt;条件3&gt;</li>
 </ul>
-<p><strong><em>投影查询</em></strong>：select &lt;字段1&gt;，&lt;字段2&gt;，&lt;字段3&gt; from &lt;表名&gt;</p>
-<p><strong><em>排序查询</em></strong>：select * from &lt;表名&gt; ORDER BY &lt;字段1&gt;，&lt;字段2&gt;</p>
-<p><strong><em>分页查询</em></strong>：LIMIT <M> OFFSET <N>   截取 第m条到n条的数据</p>
+<p><strong><em>投影查询</em></strong>：<br>select &lt;字段1&gt;，&lt;字段2&gt;，&lt;字段3&gt; from &lt;表名&gt;</p>
+<p><strong><em>排序查询</em></strong>：<br>select * from &lt;表名&gt; ORDER BY &lt;字段1&gt;，&lt;字段2&gt;</p>
+<p><strong><em>分页查询</em></strong>：<br>LIMIT <M> OFFSET <N>   截取 第m条到n条的数据</p>
 <p><strong><em>聚合查询</em></strong>：</p>
 <ul>
 <li>COUNT() 某列个数</li>
@@ -222,9 +224,10 @@
 <li>FROM &lt;表1&gt; RIGHT OUTER JOIN &lt;表2&gt;  将表1的数据加到表2上</li>
 <li>FROM &lt;表1&gt; FULL OUTER JOIN &lt;表2&gt;  选出两表都存在的记录</li>
 </ul>
-<h2 id="增、删、改"><a href="#增、删、改" class="headerlink" title="增、删、改"></a>增、删、改</h2><p><strong><em>增</em></strong>：INSERT INTO &lt;表名&gt; (字段1, 字段2, …) VALUES (值1, 值2, …)</p>
-<p><strong><em>删</em></strong>：DELETE FROM &lt;表名&gt; WHERE …UPDATE：更新已有记录          </p>
-<p><strong><em>改</em></strong>：&lt;表名&gt; SET 字段1=值1, 字段2=值2, … WHERE …</p>
+<h2 id="增、删、改"><a href="#增、删、改" class="headerlink" title="增、删、改"></a>增、删、改</h2><p><strong><em>增</em></strong>：<br>INSERT INTO &lt;表名&gt; (字段1, 字段2, …) VALUES (值1, 值2, …)</p>
+<p><strong><em>删</em></strong>：<br>DELETE FROM &lt;表名&gt; WHERE …UPDATE：更新已有记录          </p>
+<p><strong><em>改</em></strong>：<br>&lt;表名&gt; SET 字段1=值1, 字段2=值2, … WHERE …</p>
+<h2 id="无图无真相"><a href="#无图无真相" class="headerlink" title="无图无真相"></a>无图无真相</h2><p><img src="https://user-images.githubusercontent.com/7157346/64021626-fa6c1200-cb66-11e9-8742-23bc7d107532.png" alt="sql图解"></p>
 <p><strong><em>更多参考</em></strong><br><a href="https://www.runoob.com/sql/sql-tutorial.html" target="_blank" rel="noopener">菜鸟SQL</a><br><a href="https://www.liaoxuefeng.com/wiki/1177760294764384" target="_blank" rel="noopener">廖雪峰SQL</a></p>
 
       
@@ -273,7 +276,7 @@ var a = new Donate({
       
       
         
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
 
       
 
@@ -309,7 +312,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询"><span class="nav-number">2.</span> <span class="nav-text">查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增、删、改"><span class="nav-number">3.</span> <span class="nav-text">增、删、改</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询"><span class="nav-number">2.</span> <span class="nav-text">查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增、删、改"><span class="nav-number">3.</span> <span class="nav-text">增、删、改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无图无真相"><span class="nav-number">4.</span> <span class="nav-text">无图无真相</span></a></li></ol>
     
     </div>
   </aside>
