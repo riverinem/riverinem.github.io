@@ -22,9 +22,10 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;upload.zcool.com.cn&#x2F;image&#x2F;10297859&#x2F;3&#x2F;community&#x2F;011c455de873dea801209568ee448d.png@1280w_1l_2o_100sh.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;upload.zcool.com.cn&#x2F;image&#x2F;10297859&#x2F;3&#x2F;community&#x2F;011deb5de51c13a80120686b8a0534.jpg@1280w_1l_2o_100sh.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;upload.zcool.com.cn&#x2F;image&#x2F;10297859&#x2F;3&#x2F;community&#x2F;0129875de87923a801209568e65efe.png@1280w_1l_2o_100sh.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;upload.zcool.com.cn&#x2F;image&#x2F;10297859&#x2F;3&#x2F;community&#x2F;016f8e5de8f55ba801209568dc7e75.png@1280w_1l_2o_100sh.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;upload.zcool.com.cn&#x2F;image&#x2F;10297859&#x2F;3&#x2F;community&#x2F;01bc2f5de87c1ca801213853e9ec33.png@1280w_1l_2o_100sh.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;upload.zcool.com.cn&#x2F;image&#x2F;10297859&#x2F;3&#x2F;community&#x2F;0179bf5de87c88a80121385376e072.png@1280w_1l_2o_100sh.png">
-<meta property="og:updated_time" content="2019-12-05T03:52:50.422Z">
+<meta property="og:updated_time" content="2019-12-05T14:30:33.811Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;upload.zcool.com.cn&#x2F;image&#x2F;10297859&#x2F;3&#x2F;community&#x2F;011c455de873dea801209568ee448d.png@1280w_1l_2o_100sh.png">
   
@@ -255,22 +256,24 @@
 <blockquote>
 <p>什么是 <strong><em>封闭场景</em></strong><br>1）用户的交互意图和需求在确定性范围；<br>2）用户的问题在知识与资源上处于封闭、收敛空间；<br>3）案例：<br>    - 到店点餐场景：用户的点餐意图是确定的，用户可选的商家和菜品也都是确定的；<br>    - 机票预订场景：用户的订票意图是确定的，飞机起落地点、仓位、价格、人数也是确定的；<br>    - 打车出行场景：用户的出行意图是确定的，车辆起始地点也是确定的</p>
 </blockquote>
-<h2 id="KBQA"><a href="#KBQA" class="headerlink" title="KBQA"></a>KBQA</h2><p>从传统智能问答到知识图谱问答，第一个重要变化是<u>引入知识图谱</u>。第二个重要变化是在<u>语言理解算法从分类或匹配算法改为语义分析(Semantic Parsing)算法</u>。传统智能问答在语言理解部分只需要将用户问题映射为一个标准问题,即上文描述的FAQ类，而Semantic Parsing则需要对用户问题进行深入理解，并输出一个结构化的语义表达式，直接从知识图谱中查询答案，或者经过推理后产生相应的答案。比较知名的案例就是，Google为了提升搜索引擎返回的答案质量和用户查询的效率，于2012年5月16日发布了知识图谱(Knowledge Graph)。有知识图谱作为辅助，搜索引擎能够洞察用户查询背后的语义信息，返回更为精准、结构化的信息，更大可能地满足用户的查询需求。</p>
-<p>KBQA，比较直白的描述就是 <strong><em>把用户的问题转换为机器的查询语句，直接查询知识图谱获取答案</em></strong> 。传统的问答系统通过QA/QQ匹配，KBQA则通过抽取用户query中的实体词和语义结构，与知识库中RDF三元组映射，最后通过图谱计算，返回对应的属性值/关系，并生成自然语言。所以客观上讲，知识图谱就是由一些相互连接的实体和他们的属性构成的。</p>
-<p>KBQA是基于知识库的问答系统，实际工作中虽然有感受，但是一段时间我还是比较困惑 <strong><em>如何区分知识库与知识图谱</em></strong> ，直到看到《阿里技术》搜索事业部的一张技术架构图：<br><img src="https://upload.zcool.com.cn/image/10297859/3/community/0129875de87923a801209568e65efe.png@1280w_1l_2o_100sh.png" alt="KG与KB"><br>可以看到，知识图谱技术更倾向于对NLU模块的支持，用于正确识别用户Query中的意图，无论是通过文本搜索、语音搜索还是图像搜索等多种交互方式；而知识库用于返回精准的Answer给用户，而电商场景下的用户Query就适用于特定领域的问答系统。</p>
-<p>此外，像阿里、美团这类覆盖用户场景数据较多的巨头，会应用到多个图谱去多维度的做对话决策和推荐，比如下方的电商关系图谱、用户兴趣图谱等等；<br><img src="https://upload.zcool.com.cn/image/10297859/3/community/01bc2f5de87c1ca801213853e9ec33.png@1280w_1l_2o_100sh.png" alt="电商关系图谱"></p>
+<h2 id="KBQA"><a href="#KBQA" class="headerlink" title="KBQA"></a>KBQA</h2><p>KBQA，比较直白的描述就是 <strong><em>把用户的问题转换为机器的查询语句，直接查询知识图谱获取答案</em></strong> ；进一步讲，就是KBQA是基于知识库的问答系统，当中运用到了知识图谱技术；而知识图谱技术在问答系统的NLU模块（自然语言处理）和NLG模块（自然语言生成）都有应用；《阿里技术》搜索事业部分享的一张技术架构图可以帮助大家理解，NLU模块中通过知识图谱技术进行语义分析/语法分析来理解用户的意图，然后将用户Query转化成机器查询语句；NLG模块通过查询语句在「购物知识库」的相关知识图谱中查找最终答案（对应的关系/值），经过话术组织后返回给用户。<br><img src="https://upload.zcool.com.cn/image/10297859/3/community/0129875de87923a801209568e65efe.png@1280w_1l_2o_100sh.png" alt="《阿里技术》对话系统"></p>
+<p>从传统智能问答到知识图谱问答（KBQA），第一个重要变化是<u>引入知识图谱</u>。第二个重要变化是在<u>语言理解算法从分类或匹配算法改为语义分析(Semantic Parsing)算法</u>。传统的问答系统类似于常规的搜索，通过keywords找到对应的标准问或扩展问集合，然后算法排序给出最匹配问法的标准答案。而基于知识图谱的搜索通过在已有的图谱知识库中遍历知识（图谱中的知识一般以三元组的形式呈现）然后返回对应的属性值/关系，一般如果路径正确，返回的答案较之传统的匹配分类，精准度有极大的提高。</p>
+<p>知识图谱一开始的应用主要集中在搜索与推荐领域，如今的问答系统本质上是搜索与推荐的延伸。Google一开始为了提升搜索引擎返回的答案质量和用户查询的效率，于2012年5月16日发布了知识图谱(Knowledge Graph)。通过知识图谱作为辅助，搜索引擎可以洞察用户查询背后的语义信息，返回更为精准、结构化的信息，更大可能地满足用户的查询需求；而后2014年Google推出了自家的智能助理产品Google Now，2016年演变为Google Assistant。实际应用中，知识图谱有利于将互联网的信息表达成更接近人类认知世界的形式，并且提供了一种更好的组织、管理和利用海量信息的方式，相比于传统的关系型数据库，图数据库的优点在于更好更快更省的处理关系型数据。</p>
+<p>实际工作中有一段时间比较困惑，自己刚开始也无法解释 <strong><em>知识库与知识图谱有什么区别</em></strong> ，毕竟不是科班出身，当看到知乎上漆桂林教授的解释，我有了进一步理解，结合工作中的实际应用，我会将知识图谱理解为一个大的仓库，里面放着各种各样的知识，业务方根据业务需要，从这个仓库中取出某一领域的知识，这部分知识就构成了一个「知识库」，而取这部分知识的方法/规则，实际上就是业务人员预先定义的「本体/Schema」。<br><img src="https://upload.zcool.com.cn/image/10297859/3/community/016f8e5de8f55ba801209568dc7e75.png@1280w_1l_2o_100sh.png" alt="漆桂林教授对KB与KG关系的解释"></p>
+<p>巨头们由于业务覆盖了我们生活当中较多当场景，所以相关数据也较全，也有能力去构建多个图谱去多维度的做相关业务决策和推荐，比如阿里知识图谱以商品、标准产品、 标准品牌、 标准条码、标准分类为核心， 利用实体识别、实体链指和语义分析技术，整合关联了例如舆情、百科、国家行业标准等9大类一级本体，包含了百亿级别的三元组，形成了巨大的知识网。这些丰富的商品数据除了来自多个业务角色，同时品牌商、行业运营、治理运营、消费者、国家机构、物流商等多种角色也参与其中，贡献着校正着这样一个庞大的商品库。无论是知识产权保护，还是提升消费者购物体验，实现商品数据的标准化（商品规范的统一和商品信息的确定性）, 以及与内外部数据之间的深度互联，比如下图中的电商关系图谱与用户兴趣图谱：</p>
+<p><img src="https://upload.zcool.com.cn/image/10297859/3/community/01bc2f5de87c1ca801213853e9ec33.png@1280w_1l_2o_100sh.png" alt="电商关系图谱"></p>
 <p><img src="https://upload.zcool.com.cn/image/10297859/3/community/0179bf5de87c88a80121385376e072.png@1280w_1l_2o_100sh.png" alt="用户兴趣图谱"></p>
 <p><strong><em>业务问题：</em></strong></p>
 <p>在实际项目中，服务商在为B端客户构建KBQA Bot产品时，会遇到：如果合作的每一个客户都需要单独建立知识图谱，因为不同行业的客户所需要的知识领域也不同，比如医疗行业需要医疗的图谱，金融行业需要金融的图谱，一般的服务商难以像淘宝天猫这样有这么大体量的数据和人力去构建一个百亿规模的知识图谱(这里“百亿”指三元组数量)，否则不但客户会觉得成本高，服务商自己也承受不起。又或者在面对B端客户时，服务商会因为对客户业务对不了解，以及客户对技术理解的匮乏，导致前期沟通成本较高。一个非常简单而又有效的方式是</p>
 <p>所以一般在做这类项目时：1）从客户现有的FAQ知识库出发，快速地归纳Schema和知识图谱；2）为了进一步降低成本，会协调资源专门做一类或几类ROI高的方向，比如提供金融领域、政务领域的智能问答解决方案。</p>
 <h2 id="Chat-Bot"><a href="#Chat-Bot" class="headerlink" title="Chat-Bot"></a>Chat-Bot</h2><p>实际业务场景中，用户与系统的对话难免会涉及到闲聊部分。闲聊功能可以让对话机器人更有情感和温度。Chat Bot通常使用机器翻译中的深度学习seq2seq框架来产生答复。不同的是，该场景下，用户的query通常不像特定领域的Bot那样可以产生合理的答复，设计的时候还需要纳入当前对话的上下文、用户画像等因素，从而产生更多样化以及信息量的答复才是目的。</p>
-<h2 id="概念解释"><a href="#概念解释" class="headerlink" title="概念解释*"></a>概念解释*</h2><p> <strong><em>知识图谱</em></strong></p>
+<h2 id="术语解释"><a href="#术语解释" class="headerlink" title="术语解释*"></a>术语解释*</h2><p> <strong><em>知识图谱</em></strong></p>
 <blockquote>
 <p>知识图谱是由一条条知识组成，每条知识都可以表示为一个SPO三元组(Subject-Predicate-Object)。构建知识图谱非常重要的一点是从非结构化数据中抽象出符合业务场景的schema，可以理解为一个框架，它包含实体、属性、关系。</p>
 </blockquote>
-<p> <strong><em>Schema</em></strong></p>
+<p> <strong><em>本体/Schema</em></strong></p>
 <blockquote>
-<p>在实际构建知识库的应用中，在将文本数据或者是现实世界中的知识表示成RDF数据之前，需要用到RDF典，即schema。用户可以方便的将现实中的知识映射成RDF Graph. 通过复用Schema有利于数据的开放共享，同时避免重复劳动。一般定义Schema有两种方式，一是自上而下，而是自下而上。</p>
+<p>在实际构建知识库的应用中，在将文本数据或者是现实世界中的知识表示成RDF数据之前，需要用到本体-chema。本体是对特定领域概念和概念之间关系的形式化表达，本体是知识的抽象，文献中可能用Classes或Concept来表示，比如它告诉我们这个世界有动物、植物和微生物；用户可以方便的将现实中的知识映射成RDF Graph. 通过复用本体利于数据的开放共享，同时避免重复劳动。一般定义本体有两种方式，一是自上而下，而是自下而上。</p>
 </blockquote>
 <p><strong><em>RDF</em></strong></p>
 <blockquote>
@@ -284,6 +287,7 @@
 <blockquote>
 <p>SPARQL是针对RDF数据进行结构化查询的语言，可以理解为关系型数据库中的SQL语句。</p>
 </blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.zhihu.com/question/34835422" target="_blank" rel="noopener">知识图谱主要技术</a><br><a href="https://mp.weixin.qq.com/s/MZE_SXsNg6Yt4dz2fmB1sA" target="_blank" rel="noopener">知识图谱推理引擎</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzIzOTU0NTQ0MA==&mid=2247488155&idx=1&sn=a0ec228c32153c48d44bbd2d5ff8d003&chksm=e9292f94de5ea68200f09389a13a588526f91f8da76c5a4ff8c33b7f0ba67591870f5d363647&mpshare=1&scene=23&srcid=0904WvPyOCoU2ME6pgyjv4Zk#rd" target="_blank" rel="noopener">云栖大会-知识图谱分享</a><br><a href="https://blog.csdn.net/u011801161/article/details/79100977" target="_blank" rel="noopener">阿里搜索事业部-知识图谱分享</a><br><a href="http://www.elecfans.com/d/908682.html" target="_blank" rel="noopener">阿里知识图谱团队分享</a><br><a href="https://www.zhihu.com/question/34835422" target="_blank" rel="noopener">漆桂林教授对KB/KG/本体的解释</a></p>
 
       
     </div>
@@ -367,7 +371,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QA-Bot"><span class="nav-number">2.</span> <span class="nav-text">QA-Bot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Task-Bot"><span class="nav-number">3.</span> <span class="nav-text">Task-Bot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KBQA"><span class="nav-number">4.</span> <span class="nav-text">KBQA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chat-Bot"><span class="nav-number">5.</span> <span class="nav-text">Chat-Bot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概念解释"><span class="nav-number">6.</span> <span class="nav-text">概念解释*</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QA-Bot"><span class="nav-number">2.</span> <span class="nav-text">QA-Bot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Task-Bot"><span class="nav-number">3.</span> <span class="nav-text">Task-Bot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KBQA"><span class="nav-number">4.</span> <span class="nav-text">KBQA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chat-Bot"><span class="nav-number">5.</span> <span class="nav-text">Chat-Bot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#术语解释"><span class="nav-number">6.</span> <span class="nav-text">术语解释*</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol>
     
     </div>
   </aside>
