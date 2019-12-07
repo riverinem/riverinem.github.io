@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>关于域名与图床实践 | Hexo</title>
+  <title>博客图床实践 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="keywords" content="技术学习" />
@@ -14,13 +14,13 @@
   <meta name="description" content="前言今天发现保存在Github上的文章图片在Chrome下加载不出来，但是链接单独在浏览器打开可以查看，于是查了下发现不止我一个有这样的问题，而且学到了一个新的术语图床。  图床一般是指储存图片的服务器，有国内和国外之分。国外的图床由于有空间距离等因素决定访问速度很慢影响图片显示速度。国内也分为单线空间、多线空间和cdn加速三种。  自建图床需备案网上推荐七牛云的比较多，之前在工作中也有接触，但是">
 <meta name="keywords" content="技术,学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于域名与图床实践">
+<meta property="og:title" content="博客图床实践">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;06&#x2F;2019_12_06&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="前言今天发现保存在Github上的文章图片在Chrome下加载不出来，但是链接单独在浏览器打开可以查看，于是查了下发现不止我一个有这样的问题，而且学到了一个新的术语图床。  图床一般是指储存图片的服务器，有国内和国外之分。国外的图床由于有空间距离等因素决定访问速度很慢影响图片显示速度。国内也分为单线空间、多线空间和cdn加速三种。  自建图床需备案网上推荐七牛云的比较多，之前在工作中也有接触，但是">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;07&#x2F;W3kPQL86yjvsHdO.png">
-<meta property="og:updated_time" content="2019-12-07T04:44:23.967Z">
+<meta property="og:updated_time" content="2019-12-07T04:57:26.534Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;07&#x2F;W3kPQL86yjvsHdO.png">
   
@@ -166,7 +166,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      关于域名与图床实践
+      博客图床实践
     </h1>
   
 
@@ -214,6 +214,9 @@
 </ul>
 <p>看下来口碑比较好的是 <strong>SM.MS</strong> 图床和图床管理工具 <strong>PicGo</strong> ，后者是个开源项目<a href="https://picgo.github.io/PicGo-Doc/zh/guide/#%E5%BA%94%E7%94%A8%E8%AF%B4%E6%98%8E" target="_blank" rel="noopener">Github传送门</a>以及奉上<a href="https://picgo.github.io/PicGo-Doc/zh/guide/getting-started.html#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B" target="_blank" rel="noopener">入门指南</a>。PicGO支持截图、拖拽上传到默认图床 <strong>SM.MS</strong> ，支持Win和Mac；另外可以自行构建PicGo选择自定义图床，比如阿里云、腾讯云或者Github等；下图靓照👇：<br><img src="https://i.loli.net/2019/12/07/W3kPQL86yjvsHdO.png" alt="PicGo界面"></p>
 <p>后话：有精力要试一试Github+PicGo～</p>
+<blockquote>
+<p>这篇顺便记录下自己搭建遇到的问题，不管是之前引用了Github项目下的图片链接还是PicGO生成的链接，用Atom编辑后最后还是没有同步到线上，链接仍然是以往的失效链接，以为是Github的问题，后来把本地Hexo目录下的MD文档拿出来看了下发现文档也没有同步，断定是Atom的问题，推断是Atom的编辑权限需要通过Terminal重新授权下了，调试了一下果然好了…</p>
+</blockquote>
 
       
     </div>
