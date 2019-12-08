@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>数据分析从入门到放弃:d | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="学习数据思维" />
+  
+  
+  
+  
+  <meta name="description" content="数据分析结构层次 底层数据的收集——产品端收集 数据业务化——产品需要什么数据 数据可视化——产品的表现如何？ 数据决策和执行——怎么让产品更好？ 数据模型——产品开始自动化和系统化运营 数据战略——指导未来  企业数据体系一览 能力：1）数据思维；2）业务知识； 目录 数据思维 业务知识 Excel 数据可视化 SQL* 统计学* Python*  数据思维1）思维框架  结构化  寻找核心论点">
+<meta name="keywords" content="学习,数据,思维">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据分析从入门到放弃:D">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;08&#x2F;2019_12_08_02&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数据分析结构层次 底层数据的收集——产品端收集 数据业务化——产品需要什么数据 数据可视化——产品的表现如何？ 数据决策和执行——怎么让产品更好？ 数据模型——产品开始自动化和系统化运营 数据战略——指导未来  企业数据体系一览 能力：1）数据思维；2）业务知识； 目录 数据思维 业务知识 Excel 数据可视化 SQL* 统计学* Python*  数据思维1）思维框架  结构化  寻找核心论点">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;08&#x2F;gRSd8XU431qz7Ax.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;08&#x2F;Q1JYAzb8j39Vy2R.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;08&#x2F;XvceEFmUjou9Dft.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;08&#x2F;ihY3VDFEpdk8mO9.png">
+<meta property="og:updated_time" content="2019-12-08T13:53:41.177Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;08&#x2F;gRSd8XU431qz7Ax.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/color.svg">
+  <link rel="apple-touch-icon" href="/css/images/color.svg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 border-width: 0px;  margin-top: 15px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="50px" height="50px" alt="Hike News" src="/css/images/color.svg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">记录</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-2019_12_08_02" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      数据分析从入门到放弃:D
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2019/12/08/2019_12_08_02/" class="article-date">
+	  <time datetime="2019-12-08T06:55:33.855Z" itemprop="datePublished">2019-12-08</time>
+	</a>
+
+      
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数据分析结构层次"><a href="#数据分析结构层次" class="headerlink" title="数据分析结构层次"></a>数据分析结构层次</h2><ul>
+<li>底层数据的收集——产品端收集</li>
+<li>数据业务化——产品需要什么数据</li>
+<li>数据可视化——产品的表现如何？</li>
+<li>数据决策和执行——怎么让产品更好？</li>
+<li>数据模型——产品开始自动化和系统化运营</li>
+<li>数据战略——指导未来</li>
+</ul>
+<h2 id="企业数据体系一览"><a href="#企业数据体系一览" class="headerlink" title="企业数据体系一览"></a>企业数据体系一览</h2><p><img src="https://i.loli.net/2019/12/08/gRSd8XU431qz7Ax.png" alt="企业数据体系"></p>
+<p>能力：1）数据思维；2）业务知识；</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li>数据思维</li>
+<li>业务知识</li>
+<li>Excel</li>
+<li>数据可视化</li>
+<li>SQL*</li>
+<li>统计学*</li>
+<li>Python*</li>
+</ul>
+<h2 id="数据思维"><a href="#数据思维" class="headerlink" title="数据思维"></a>数据思维</h2><p>1）思维框架</p>
+<ul>
+<li><p>结构化</p>
+<ul>
+<li>寻找核心论点：可以是假设、问题、预测、原因；</li>
+<li>结构拆解：自上而下层层拆解，呈因果依赖关系；</li>
+<li>MECE：相互独立，避免交叉，分论点完善；</li>
+<li>验证：核心论点可量化，可验证；</li>
+</ul>
+</li>
+<li><p>公式化</p>
+<ul>
+<li>销售额=销量*客单价；</li>
+<li>利润=收益-成本；</li>
+<li>销售额=多个商品/SKU的总和；</li>
+<li>地区销量=不同线下渠道的累加；</li>
+<li>幸福=效用/欲望</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>将结构化的各个论点用公式串联，用数据呈现。</p>
+</blockquote>
+<ul>
+<li>获取用户=主动流量+被动流量</li>
+<li>主动流量=不同渠道x(曝光量 x 转化率)</li>
+<li>被动流量=邀请人数 x人均邀请量x转化率</li>
+</ul>
+<ul>
+<li>业务化<ul>
+<li>多和业务沟通；</li>
+<li>多从业务角度思考；</li>
+<li>参与到业务中去；</li>
+</ul>
+</li>
+</ul>
+<p>案例：</p>
+<blockquote>
+<p>如何预估上海地区的共享单车投放量？可以从城市流动人口计算、人口密度计算、城市交通数据计算、自行车保有量计算等。</p>
+</blockquote>
+<p>小结：</p>
+<blockquote>
+<p>用结构化思考+公式化拆解，获得的最终分析论点在很多时候只是现象。数据是某个结果的体现，但不代表真正的原因。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">结构化思维</th>
+<th align="center">结构化数据</th>
+<th align="center">结构化业务数据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">摸清思路</td>
+<td align="center">将其可视化</td>
+<td align="center">落地、贴和业务</td>
+</tr>
+</tbody></table>
+<p>2）思维工具</p>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">应用</th>
+<th align="center">特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">象限法</td>
+<td align="center">用户分层、竞品划分、RFM等；</td>
+<td align="center">策略驱动，直观清晰</td>
+</tr>
+<tr>
+<td align="center">多维法</td>
+<td align="center">用户统计维度、行为维度、消费维度、商品维度</td>
+<td align="center">处理大数据集，唯独丰富复杂的数据效果好</td>
+</tr>
+<tr>
+<td align="center">假设法</td>
+<td align="center">假设事件A发生，推算指标A1..An数据变化，然后将指标数据汇总得出结论；</td>
+<td align="center">当没有直观线索或数据时，以假设推断来论证</td>
+</tr>
+<tr>
+<td align="center">指数法</td>
+<td align="center">线性加权、反比例、log</td>
+<td align="center">目标强，没有指标创造指标</td>
+</tr>
+<tr>
+<td align="center">二八法</td>
+<td align="center">20%变量带来80%效果，TopN，数据管理</td>
+<td align="center">和业务紧密相关，和KPI相关</td>
+</tr>
+<tr>
+<td align="center">对比法</td>
+<td align="center">竞品、类别、属性、转化、前后对比，还有同比环比</td>
+<td align="center">孤树不证，用来挖掘数据规律</td>
+</tr>
+<tr>
+<td align="center">漏斗法</td>
+<td align="center">流程化思考方法，如用户生命周期模型</td>
+<td align="center">单一漏斗分析没有用，需要和其他方法结合</td>
+</tr>
+</tbody></table>
+<p>图例：</p>
+<p><img src="https://i.loli.net/2019/12/08/Q1JYAzb8j39Vy2R.png" alt="象限法"><br><img src="https://i.loli.net/2019/12/08/XvceEFmUjou9Dft.png" alt="多维法"></p>
+<h2 id="业务知识"><a href="#业务知识" class="headerlink" title="业务知识"></a>业务知识</h2><blockquote>
+<p>惟有理解业务，才能理解业务数据模型；<br>模型未动，指标先行；<br>如果你不能衡量它，你就无法增长它；</p>
+</blockquote>
+<p>1）经典的业务指标<code>举例</code></p>
+<table>
+<thead>
+<tr>
+<th align="center">市场营销</th>
+<th align="center">产品运营</th>
+<th align="center">用户行为</th>
+<th align="center">电商</th>
+<th align="center">流量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">用户生命周期</td>
+<td align="center">用户获取：渠道到达/转化/ROI</td>
+<td align="center">功能使用率/渗透率：搜索/转评赞/收藏/添加好友</td>
+<td align="center">笔/件单价、成交率、购物篮系数</td>
+<td align="center">PV/UV</td>
+</tr>
+<tr>
+<td align="center">用户价值/贡献/ROI</td>
+<td align="center">用户活跃：日/周/月活跃用户使用程度/占比/频次/时长</td>
+<td align="center">用户会话：单个用户会话数/天，间隔30min</td>
+<td align="center">复购率和回购率，表达消费欲和忠诚度</td>
+<td align="center">新老访客占比/访客时间/访客平均访问页数、来源</td>
+</tr>
+<tr>
+<td align="center">RFM模型</td>
+<td align="center">用户留存：七日留存</td>
+<td align="center">用户路径：用户一次会话浏览轨迹（桑基图）</td>
+<td align="center">/</td>
+<td align="center">访客行为：转化率/首页访客占比</td>
+</tr>
+<tr>
+<td align="center">用户分群/营销矩阵</td>
+<td align="center">营收：付费用户数/占比/ARPU/ARPPU/客单价/LTV=ARPU/流失率</td>
+<td align="center">/</td>
+<td align="center">/</td>
+<td align="center">退出率和跳出率</td>
+</tr>
+<tr>
+<td align="center">/</td>
+<td align="center">传播：K因子/分享率</td>
+<td align="center">/</td>
+<td align="center">/</td>
+<td align="center">/</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>通过有效组合设计指标；好的指标是一个比率。</p>
+</blockquote>
+<p>2）建立业务分析框架</p>
+<ul>
+<li>市场营销模型</li>
+<li>AARRR/产品运营模型</li>
+<li>用户行为模型</li>
+<li>电子商务模型</li>
+<li>流量模型</li>
+</ul>
+<blockquote>
+<p>所谓分析框架，根据用户主要行为路径/环节搭建模型形成闭环，便于聚焦/推导各个环节的核心指标。</p>
+</blockquote>
+<p>图例：</p>
+<p><img src="https://i.loli.net/2019/12/08/ihY3VDFEpdk8mO9.png" alt="电商模型"></p>
+<p>3）数据管理</p>
+<p>30%数据统计+70%数据管理</p>
+<h2 id="Excel"><a href="#Excel" class="headerlink" title="Excel"></a>Excel</h2><p>1）常用函数</p>
+<table>
+<thead>
+<tr>
+<th align="center">文本清洗</th>
+<th align="center">关联匹配</th>
+<th align="center">逻辑运算</th>
+<th align="center">计算统计</th>
+<th align="center">时间序列</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Find</td>
+<td align="center">Lookup</td>
+<td align="center">And</td>
+<td align="center">Sum</td>
+<td align="center">Year</td>
+</tr>
+<tr>
+<td align="center">Left、Right、Mid</td>
+<td align="center">Vlookup</td>
+<td align="center">Or</td>
+<td align="center">Sumproduct</td>
+<td align="center">Month</td>
+</tr>
+<tr>
+<td align="center">Concatenate</td>
+<td align="center">Index</td>
+<td align="center">IF</td>
+<td align="center">Count</td>
+<td align="center">Weekday</td>
+</tr>
+<tr>
+<td align="center">Replace</td>
+<td align="center">Match</td>
+<td align="center">Is</td>
+<td align="center">Max、Min</td>
+<td align="center">Weeknum</td>
+</tr>
+<tr>
+<td align="center">Substitute</td>
+<td align="center">Row</td>
+<td align="center">Not</td>
+<td align="center">Rank</td>
+<td align="center">Day</td>
+</tr>
+<tr>
+<td align="center">Text</td>
+<td align="center">Column</td>
+<td align="center">False True</td>
+<td align="center">Rand Randbetween</td>
+<td align="center">Date</td>
+</tr>
+<tr>
+<td align="center">Trim</td>
+<td align="center">Offset</td>
+<td align="center">/</td>
+<td align="center">Average</td>
+<td align="center">Now</td>
+</tr>
+<tr>
+<td align="center">Len</td>
+<td align="center">Hyperlink</td>
+<td align="center">/</td>
+<td align="center">Quartile</td>
+<td align="center">Today</td>
+</tr>
+<tr>
+<td align="center">/</td>
+<td align="center">/</td>
+<td align="center">/</td>
+<td align="center">Stdev</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">/</td>
+<td align="center">/</td>
+<td align="center">/</td>
+<td align="center">Substotal</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">/</td>
+<td align="center">/</td>
+<td align="center">/</td>
+<td align="center">Int</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">/</td>
+<td align="center">/</td>
+<td align="center">/</td>
+<td align="center">Round</td>
+<td align="center">/</td>
+</tr>
+</tbody></table>
+<p>2）技巧</p>
+<ul>
+<li>数据验证/下拉菜单</li>
+<li>分列</li>
+<li>删除重复值</li>
+<li>迷你图</li>
+<li>数据分析(宏)</li>
+<li>数据切片</li>
+<li>数据透视表</li>
+<li>插入图表</li>
+</ul>
+<h2 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h2><p>1）目的</p>
+<blockquote>
+<p>让数据更高效、易读，发现背后逻辑、因素，以及美观;<br>单一图表的可视化没有意义，三表成虎；</p>
+</blockquote>
+<p>2）图表概念</p>
+<ul>
+<li>维度Dimension：描述分析的角度、属性，分类数据；</li>
+<li>量值Measure：具体的参考数值、数据。</li>
+</ul>
+<p>3）初级图表</p>
+<ul>
+<li>散点图：解释数据之间的规律；</li>
+<li>气泡图：散点图的变种，引入了第三个变量气泡的大小；</li>
+<li>单轴散点图：维度作Y轴，洞察数据在不同类别下的数据规律；</li>
+<li>折线图：观察数据随时间变化的趋势；</li>
+<li>面积图：折线图的变种，注重数据类别之间随着时间趋势的变化关系；</li>
+<li>柱形图：类别之间的关系；</li>
+<li>直方图：柱形图的统计型变形，另外有正负柱形图/条形图/堆积柱形图/瀑布图等变种图；</li>
+<li>饼图：理解为环状的柱形图；</li>
+<li>玫瑰图：饼图的变种；</li>
+<li>漏斗图：对转化过程的直观展示；</li>
+<li>雷达图：适用于个体的数据和属性可视化，常见CRM和用户画像；</li>
+</ul>
+<p>4）高级图表</p>
+<ul>
+<li>树形图：适合数据量大，比如电商SKU；</li>
+<li>桑基图：表示数据复杂变化趋势的图表，表示一对多和多对一关系；</li>
+<li>热力图：数据在空间上的变化规律，也可以是属性和维度的规律组合，如网页浏览、O2O、星期表；</li>
+<li>关系图：常见于各类社交媒体；</li>
+<li>箱线图：统计用图表，研究和观察数据分布；</li>
+<li>标靶图/子弹图：常用语衡量业务销售完成情况；</li>
+<li>词云图：文本分析利器；</li>
+<li>地理图：数据和空间之间的关系。通过经纬度数值度量绘制；</li>
+<li>甘特图：描述项目进度；</li>
+</ul>
+<p>5）图表绘制技巧</p>
+<ul>
+<li>次坐标轴、坐标轴边界；</li>
+<li>辅助列；</li>
+<li>视觉元素更换；</li>
+<li>配色盘；</li>
+</ul>
+<p>6）BI工具</p>
+<p>产品：</p>
+<ul>
+<li>PowerBI（仅Win）</li>
+<li>Tableau（Win、Mac、Web）</li>
+</ul>
+<p>入门：</p>
+<ul>
+<li>报表1/2…n</li>
+<li>模型</li>
+<li>数据清洗</li>
+<li>可视化图表</li>
+<li>Dashboard</li>
+</ul>
+<p>功能：</p>
+<ul>
+<li>获取数据（建议CSV）</li>
+<li>维度和度量</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.bilibili.com/video/av75650329?p=1" target="_blank" rel="noopener">七周成为数据分析师</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '请作者喝杯咖啡🥰', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/riverinem/riverinem.github.io/master/css/images/wechat.png',
+  alipayImage: 'https://raw.githubusercontent.com/riverinem/riverinem.github.io/master/css/images/alipay.png'
+});
+</script>
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%80%9D%E7%BB%B4/" rel="tag">思维</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE/" rel="tag">数据</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/08/2019_12_08_01/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python与Node.js</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据分析结构层次"><span class="nav-number">1.</span> <span class="nav-text">数据分析结构层次</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#企业数据体系一览"><span class="nav-number">2.</span> <span class="nav-text">企业数据体系一览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据思维"><span class="nav-number">4.</span> <span class="nav-text">数据思维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#业务知识"><span class="nav-number">5.</span> <span class="nav-text">业务知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Excel"><span class="nav-number">6.</span> <span class="nav-text">Excel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据可视化"><span class="nav-number">7.</span> <span class="nav-text">数据可视化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">8.</span> <span class="nav-text">参考</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2019 - 2019 Hexo All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">记录</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Hexo
+          </div>
+          <div class="panel-body">
+            Copyright © 2019 John Doe All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
