@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>2019_12_09 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="RFM模型在实际中的运用前言 本篇阐述了RFM模型的介绍到具体应用，并附上之前工作经历中的虚拟案例进行复盘。 RFM模型  Recency最近购买：客户最近一次和上一次的时间间隔，理论上R值越小的客户是价值越高的客户； Frequency购买频次：消费频率是客户在固定时间内的购买次数（一般是1年）；与商品属性相关，如果不是消费品而是耐用品，一般会将F替换为累计购买次数； Monetary购买价格：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019_12_09">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;09&#x2F;2019_12_09&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="RFM模型在实际中的运用前言 本篇阐述了RFM模型的介绍到具体应用，并附上之前工作经历中的虚拟案例进行复盘。 RFM模型  Recency最近购买：客户最近一次和上一次的时间间隔，理论上R值越小的客户是价值越高的客户； Frequency购买频次：消费频率是客户在固定时间内的购买次数（一般是1年）；与商品属性相关，如果不是消费品而是耐用品，一般会将F替换为累计购买次数； Monetary购买价格：">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;09&#x2F;IJq8uhALlxU6PWE.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;08&#x2F;omIQ2aefM4li6ys.png">
+<meta property="og:updated_time" content="2019-12-09T01:22:54.385Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;09&#x2F;IJq8uhALlxU6PWE.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/color.svg">
+  <link rel="apple-touch-icon" href="/css/images/color.svg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 border-width: 0px;  margin-top: 15px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="50px" height="50px" alt="Hike News" src="/css/images/color.svg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">记录</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-2019_12_09" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      2019_12_09
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2019/12/09/2019_12_09/" class="article-date">
+	  <time datetime="2019-12-08T23:56:54.490Z" itemprop="datePublished">2019-12-09</time>
+	</a>
+
+      
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="RFM模型在实际中的运用"><a href="#RFM模型在实际中的运用" class="headerlink" title="RFM模型在实际中的运用"></a>RFM模型在实际中的运用</h2><p><strong>前言</strong></p>
+<p>本篇阐述了RFM模型的介绍到具体应用，并附上之前工作经历中的虚拟案例进行复盘。</p>
+<p><strong>RFM模型</strong></p>
+<ul>
+<li>Recency最近购买：客户最近一次和上一次的时间间隔，理论上R值越小的客户是价值越高的客户；</li>
+<li>Frequency购买频次：消费频率是客户在固定时间内的购买次数（一般是1年）；与商品属性相关，如果不是消费品而是耐用品，一般会将F替换为累计购买次数；</li>
+<li>Monetary购买价格：指的是一段时间（通常是1年）内的消费金额；遵循二八原则；</li>
+</ul>
+<p><img src="https://i.loli.net/2019/12/09/IJq8uhALlxU6PWE.png" alt="RFM模型"></p>
+<p><strong>如何划分</strong>（不同商品属性划分不同）：</p>
+<p><img src="https://i.loli.net/2019/12/08/omIQ2aefM4li6ys.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th align="center">R</th>
+<th align="center">分段指标</th>
+<th align="center">推送策略</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">活跃</td>
+<td align="center">90天未购买</td>
+<td align="center">密集push</td>
+</tr>
+<tr>
+<td align="center">沉默</td>
+<td align="center">90～180天为购买</td>
+<td align="center">减少push频率，加大优惠</td>
+</tr>
+<tr>
+<td align="center">睡眠</td>
+<td align="center">180～360天未购买</td>
+<td align="center">大型活动push</td>
+</tr>
+<tr>
+<td align="center">流失</td>
+<td align="center">360天以上未购买</td>
+<td align="center">超大型活动push</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">F</th>
+<th align="center">分段指标</th>
+<th align="center">推送策略</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">新客</td>
+<td align="center">购买1次</td>
+<td align="center">传递促销信息</td>
+</tr>
+<tr>
+<td align="center">老客</td>
+<td align="center">购买2次</td>
+<td align="center">传递品牌信息</td>
+</tr>
+<tr>
+<td align="center">熟客</td>
+<td align="center">购买3次</td>
+<td align="center">传递新品/活动信息</td>
+</tr>
+<tr>
+<td align="center">忠客</td>
+<td align="center">购买3次以上</td>
+<td align="center">传递会员/权益信息</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">M</th>
+<th align="center">分段指标</th>
+<th align="center">推送策略</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">低值</td>
+<td align="center">0.5倍客单价以下</td>
+<td align="center">推送促销/活动信息</td>
+</tr>
+<tr>
+<td align="center">中值</td>
+<td align="center">0.5～1倍客单价</td>
+<td align="center">推送促销/活动信息</td>
+</tr>
+<tr>
+<td align="center">中高值</td>
+<td align="center">1～2倍客单价</td>
+<td align="center">推送品牌活动信息</td>
+</tr>
+<tr>
+<td align="center">高值</td>
+<td align="center">2倍客单价以上</td>
+<td align="center">推送品牌活动信息</td>
+</tr>
+</tbody></table>
+<p><strong>如何计算</strong></p>
+<p>这一步可以通过之前《数据分析》这篇中提到的线性加权分析去处理数据，并对不同的用户打分，罗列出用户在不同指标下的分值，也可以计算用户价值这一人为指标。</p>
+<p>假设：用户价值=R值+F值+M值</p>
+<table>
+<thead>
+<tr>
+<th align="center">F</th>
+<th align="center">得分</th>
+<th align="center">F</th>
+<th align="center">得分</th>
+<th align="center">M</th>
+<th align="center">得分</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">90天未买</td>
+<td align="center">4分</td>
+<td align="center">购买1次</td>
+<td align="center">1分</td>
+<td align="center">0～100元</td>
+<td align="center">1分</td>
+</tr>
+<tr>
+<td align="center">90～180天未买</td>
+<td align="center">3分</td>
+<td align="center">购买2次</td>
+<td align="center">2分</td>
+<td align="center">100～200元</td>
+<td align="center">2分</td>
+</tr>
+<tr>
+<td align="center">180～360天未买</td>
+<td align="center">2分</td>
+<td align="center">购买3次</td>
+<td align="center">3分</td>
+<td align="center">200～300元</td>
+<td align="center">3分</td>
+</tr>
+<tr>
+<td align="center">360天以上未买</td>
+<td align="center">1得分</td>
+<td align="center">购买3次以上</td>
+<td align="center">4分</td>
+<td align="center">300元以上</td>
+<td align="center">4分</td>
+</tr>
+</tbody></table>
+<p><strong>如何验证</strong></p>
+<p>实际应用中，RFM三个指标各自会有相应的权重，根据业务方的侧重点而不同，需要通过过去的数据计算出一个合理的权重组合，再根据这三项指标的得分求加权得分，得出最终得分大于xxx的再次购买机率较大，小于xxx的可能会流失的。</p>
+<p><strong>复盘举例</strong></p>
+<p>【问题】</p>
+<p>为在线教育某英语课程产品运营人员，需要根据「老学员」这一群体做课程召回工作以提高课程收入，你会怎么做？</p>
+<p>【思路】</p>
+<p>首先，假如要应用RFM模型，那么需要确定相关对象和指标范围；比如已知信息，学员购买频次属于「老客户」范畴，那么接下来需要确定老客户的「最近购买」和「客单价」购买情况去做相应的策略。</p>
+<p>其次，因为目前线上售卖的是教育类产品，假定标价为800元/班，在一些双十一超大型的活动折扣可以低至7折，加上一些平时的小活动，可以推算出客单价在350～500元之间，然后将这个范围分成四份（时间关系就平均分成四份，不多做深究）</p>
+<p>紧接，关于最近购买的数据一般通过跑数据库或者查看相应的报表；1）此时还需要单独划分出在上课程的学员，因为不可能用户同类课程还没上完还要推送TA们再买，可以推荐TA感兴趣但是没有参加过的课程，无论是免费试用还是付费课程，当然会根据具体情况而定，也可能这次不做推送；2）需要额外剔除近期注册且首次购买的用户，避免将其纳入最近购买的召回范畴内。</p>
+<p>然后，需要确认目前市场部门或者运营部门当前的活动，组织相关的文案，于是可以罗列出以下框架：</p>
+<table>
+<thead>
+<tr>
+<th align="center">R</th>
+<th align="center">最近购买</th>
+<th align="center">召回策略</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">活跃</td>
+<td align="center">90天未购买</td>
+<td align="center">密集push</td>
+</tr>
+<tr>
+<td align="center">沉默</td>
+<td align="center">90～180天未购买</td>
+<td align="center">减少push频率，根据优惠而定</td>
+</tr>
+<tr>
+<td align="center">睡眠</td>
+<td align="center">180～360天未购买</td>
+<td align="center">根据活动而定</td>
+</tr>
+<tr>
+<td align="center">流失</td>
+<td align="center">360天以上未购买</td>
+<td align="center">根据活动而定</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">M</th>
+<th align="center">课程单价</th>
+<th align="center">召回策略</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">低值</td>
+<td align="center">380元以下</td>
+<td align="center">根据优惠而定</td>
+</tr>
+<tr>
+<td align="center">中值</td>
+<td align="center">380～420元</td>
+<td align="center">根据优惠而定</td>
+</tr>
+<tr>
+<td align="center">中高值</td>
+<td align="center">421～460元</td>
+<td align="center">根据活动而定</td>
+</tr>
+<tr>
+<td align="center">高值</td>
+<td align="center">460元以上</td>
+<td align="center">根据活动而定</td>
+</tr>
+</tbody></table>
+<p>最后，在实际操作中，将同类召回策略两两合并，方便在push系统上操作或者清晰描述让同事代为操作等。</p>
+<table>
+<thead>
+<tr>
+<th align="center">类别</th>
+<th align="center">文案</th>
+<th align="center">规则1</th>
+<th align="center">规则2</th>
+<th align="center">规则3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">活动类</td>
+<td align="center">xxxxxx</td>
+<td align="center">最近180天及以上未购买</td>
+<td align="center">客单价低于420元</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">推荐类</td>
+<td align="center">xxxxxx</td>
+<td align="center">最近90天内未购买</td>
+<td align="center">客单价为460元及以上</td>
+<td align="center">/</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>以上仅提供思路，实际决策需要具体情况而定。</p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.jianshu.com/p/4b60880f24e2" target="_blank" rel="noopener">深入解读RFM模型</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '请作者喝杯咖啡🥰', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/riverinem/riverinem.github.io/master/css/images/wechat.png',
+  alipayImage: 'https://raw.githubusercontent.com/riverinem/riverinem.github.io/master/css/images/alipay.png'
+});
+</script>
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/08/2019_12_08_02/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数据分析从入门到放弃:D</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RFM模型在实际中的运用"><span class="nav-number">1.</span> <span class="nav-text">RFM模型在实际中的运用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2019 - 2019 Hexo All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">记录</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Hexo
+          </div>
+          <div class="panel-body">
+            Copyright © 2019 John Doe All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
