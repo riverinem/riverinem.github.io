@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>机器学习入门（上） | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="技术学习人工智能数据" />
+  
+  
+  
+  
+  <meta name="description" content="前言本篇通过Udacity《机器学习工程师》Nano Degree 课程简述什么是“机器学习”以及如何学习。 目录 机器学习简介 模型评估和验证 监督学习 非监督学习 强化学习 Kaggle*  ML简介定义 首先看下百度的定义：  机器学习是一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、算法复杂度理论等多门学科； 机器学习专门研究计算机怎样模拟或实现人类的学习行为，以获取新的知识或技能">
+<meta name="keywords" content="技术,学习,人工智能,数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习入门（上）">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;09&#x2F;2019_12_10&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言本篇通过Udacity《机器学习工程师》Nano Degree 课程简述什么是“机器学习”以及如何学习。 目录 机器学习简介 模型评估和验证 监督学习 非监督学习 强化学习 Kaggle*  ML简介定义 首先看下百度的定义：  机器学习是一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、算法复杂度理论等多门学科； 机器学习专门研究计算机怎样模拟或实现人类的学习行为，以获取新的知识或技能">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;09&#x2F;imErwfJdRzgcGko.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;09&#x2F;ws6Ze7iDGEnFCob.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;09&#x2F;uyhKJ6x4Nbir9aR.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;09&#x2F;9Ht7ZVSvihLmT2Q.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;09&#x2F;NJUsZ6Wfl3xOEpw.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;09&#x2F;2fWN4mT597jtPhD.png">
+<meta property="og:updated_time" content="2019-12-09T08:12:54.387Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;09&#x2F;imErwfJdRzgcGko.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/color.svg">
+  <link rel="apple-touch-icon" href="/css/images/color.svg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 border-width: 0px;  margin-top: 15px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="50px" height="50px" alt="Hike News" src="/css/images/color.svg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">记录</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-2019_12_10" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      机器学习入门（上）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2019/12/09/2019_12_10/" class="article-date">
+	  <time datetime="2019-12-09T04:52:08.565Z" itemprop="datePublished">2019-12-09</time>
+	</a>
+
+      
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本篇通过Udacity《机器学习工程师》Nano Degree 课程简述什么是“机器学习”以及如何学习。</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li>机器学习简介</li>
+<li>模型评估和验证</li>
+<li>监督学习</li>
+<li>非监督学习</li>
+<li>强化学习</li>
+<li>Kaggle*</li>
+</ul>
+<h1 id="ML简介"><a href="#ML简介" class="headerlink" title="ML简介"></a>ML简介</h1><p><strong>定义</strong></p>
+<p>首先看下<a href="https://baike.baidu.com/item/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/217599?fr=aladdin" target="_blank" rel="noopener">百度</a>的定义：</p>
+<ul>
+<li>机器学习是一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、算法复杂度理论等多门学科；</li>
+<li>机器学习专门研究计算机怎样模拟或实现人类的学习行为，以获取新的知识或技能，重新组织已有的知识结构使之不断改善自身的性能。</li>
+<li>机器学习是人AI的核心，是使计算机具有智能的根本途径；</li>
+<li>机器学习是用数据或以往的经验,以此优化计算机程序的性能标准；</li>
+<li>机器学习是研究怎样使用计算机模拟或实现人类学习活动的科学；</li>
+<li>机器学习是人工智能中最具智能特征，最前沿的研究领域之一。</li>
+</ul>
+<p><u>提炼关键词</u>：交叉学科、性能标准、科学、AI核心和途径、学习、智能。</p>
+<p><strong>现状</strong></p>
+<ul>
+<li>传统环境：体现在决策树、随机森林、人工神经网络、贝叶斯学习等研究方向；</li>
+<li>大数据环境：体现在数据的转向以及数据的信息处理能力等等；</li>
+</ul>
+<h2 id="模型评估和验证"><a href="#模型评估和验证" class="headerlink" title="模型评估和验证"></a>模型评估和验证</h2><p><img src="https://i.loli.net/2019/12/09/imErwfJdRzgcGko.png" alt="构建完整模型"></p>
+<p><strong>先备素质</strong></p>
+<ul>
+<li>Python；</li>
+<li>统计学知识；</li>
+<li>好奇心；</li>
+</ul>
+<p><strong>评估指标</strong></p>
+<p>1）模型与评估指标</p>
+<p>分类模型：了解模型隔多久正确或不正确地识别新样本一次；<br>回归模型：关注模型的预测值和真正值之间差多少；</p>
+<table>
+<thead>
+<tr>
+<th align="center">分类模型</th>
+<th align="center">回归模型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">准确率</td>
+<td align="center">平均绝对误差</td>
+</tr>
+<tr>
+<td align="center">精准率</td>
+<td align="center">均方误差</td>
+</tr>
+<tr>
+<td align="center">召回率</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">F1值</td>
+<td align="center">/</td>
+</tr>
+</tbody></table>
+<p>2）分类模型指标概念</p>
+<p><code>解释：假设下方表格灰色方块内数字为样本数据</code></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">预测值=1</th>
+<th align="center">预测值=0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">真实值=1</td>
+<td align="center">True Positive(TP)<code>5</code></td>
+<td align="center">False Negative(FN)<code>2</code></td>
+</tr>
+<tr>
+<td align="center">真实值=0</td>
+<td align="center">False Positive (FP)<code>4</code></td>
+<td align="center">True Negative(TN)<code>4</code></td>
+</tr>
+</tbody></table>
+<p>准确率（Accuracy）= (TP+TN) / (TP+TN+FN+TN)= (5+4) / 15 =0.6</p>
+<p>精准率（Precision）=TP/(TP+FP) = 5 / (5+4) =0.556</p>
+<p>召回率（Recall）=TP/(TP+FN) =0.714</p>
+<p>F1 = 2 * TP / (2 * TP+FP+FN) = 10 /（10+4+2）=0.625<code>数值在0～1之间</code></p>
+<p>3）回归模型指标概念</p>
+<p>平均绝对误差（Mean Absolute Deviation）</p>
+<blockquote>
+<p>平均绝对误差的计算方法是，将各个样本的绝对误差汇总，然后根据数据点数量求出平均误差。通过将模型的所有绝对值加起来，可以避免因预测值比真实值过高或过低而抵销误差，并能获得用于评估模型的整体误差指标。</p>
+</blockquote>
+<p>均方误差（mean-square error, MSE）</p>
+<blockquote>
+<p>均方误差=残差（预测值与真实值的差值）被求平方。对残差求平方的一些好处是，自动将所有误差转换为正数、注重较大的误差而不是较小的误差以及在微积分中是可微的（可让我们找到最小值和最大值）。</p>
+</blockquote>
+<p>在模型预测中，模型可能出现的<code>误差</code>来自两个主要来源，即：因模型无法表示基本数据的复杂度而造成的<code>偏差（bias）</code>，或者因模型对训练它所用的有限数据过度敏感而造成的<code>方差（variance）</code>。我们会对两者进行更详细的探讨。</p>
+<p>偏差：如前所述，如果模型具有足够的数据，但因不够复杂而无法捕捉基本关系，则会出现偏差。这样一来，模型一直会系统地错误表示数据，从而导致预测精度低。这种现象叫做<code>欠拟合（underfitting）</code>；在此情况下，我们向模型提供多少数据并不重要，因为简单模型根本无法表示其中的基本关系，我们需要更复杂的模型。</p>
+<p>方差：出现方差是正常的，但方差过高表明模型无法将其预测结果泛化到从中抽取训练样本的较大母体。对训练集高度敏感也称为<code>过拟合（overfitting）</code>，而且通常出现在模型过于复杂或我们没有足够的数据支持它时。通常，可以利用更多数据进行训练，以降低模型预测结果的方差并提高精度。</p>
+<h1 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h1><p>监管学习就是给定一堆样本，每个样本都有一组属性和一个类别，这些类别是事先确定的，那么通过学习得到一个分类器，这个分类器能够对新出现的对象给出正确的分类。这样的机器学习就被称之为监督学习。</p>
+<p><strong>课程项目</strong></p>
+<p><img src="https://i.loli.net/2019/12/09/ws6Ze7iDGEnFCob.png" alt="构建学生预警系统"></p>
+<p>材料：语言和库</p>
+<ul>
+<li>Python</li>
+<li>Numpy</li>
+<li>Sklearn</li>
+<li>iPython Notebook</li>
+</ul>
+<p><strong>机器学习算法</strong></p>
+<p><mark>1）分类 Classification </mark></p>
+<p>对模型输入特征（feature），输出标签（label）；例如在网易云音乐中，根据用户常听的歌曲节奏和时间构建一个分类模型，当用户在某一个时刻打开APP时，然后判断哪些是该用户这个时段可能喜欢听的歌曲，并把这些歌曲打上标签推荐给用户。</p>
+<p><mark>2）回归 Regression </mark></p>
+<p>对模型输入特征（feature），依变量为离散输出、连续输出的标签（label）；</p>
+<table>
+<thead>
+<tr>
+<th align="center">场景</th>
+<th align="center">连续</th>
+<th align="center">离散</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">年龄</td>
+<td align="center">/</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="center">天气</td>
+<td align="center">√</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">邮件作者</td>
+<td align="center">√</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">电话号码</td>
+<td align="center">√</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">收入</td>
+<td align="center">/</td>
+<td align="center">√</td>
+</tr>
+</tbody></table>
+<p><img src="https://i.loli.net/2019/12/09/uyhKJ6x4Nbir9aR.png" alt="资产与年龄关系"></p>
+<p>1⃣️直线回归：研究的是一个依变量与一个自变量之间的回归问题；</p>
+<p>2⃣️多项式回归：研究一个因变量与一个或多个自变量间多项式的回归分析方法；</p>
+<p><img src="https://i.loli.net/2019/12/09/9Ht7ZVSvihLmT2Q.png" alt="多项式回归方程公式举例"></p>
+<blockquote>
+<p>在畜禽、水产科学领域的许多实际问题中，影响依变量的自变量往往不止一个，而是多个，比如绵羊的产毛量这一变量同时受到绵羊体重、胸围、体长等多个变量的影响，因此需要进行一个依变量与多个自变量间的回归分析，即多元回归分析。</p>
+</blockquote>
+<p>3⃣️参数回归：从最简单的f(x)=wx+b加入多个w，x变高阶，一般越复杂的模型，参数越多；</p>
+<p>4⃣️K最近邻：给定一个训练数据集，对新的输入实例，在训练数据集中找到与该实例最邻近的K个实例， 这K个实例的多数属于某个类，就把该输入实例分类到这个类中。</p>
+<p><mark>3）决策树 Descision Tree </mark></p>
+<p>「定义」<br>决策树是一种十分常用的分类方法。他是一种监管学习。在机器学习中，决策树是一个预测模型，他代表的是对象属性与对象值之间的一种映射关系。</p>
+<p><img src="https://i.loli.net/2019/12/09/NJUsZ6Wfl3xOEpw.png" alt="示例"></p>
+<p>一个决策树包含三种类型的节点：</p>
+<ul>
+<li>决策节点：通常用矩形框来表示（上图<code>口</code>）</li>
+<li>机会节点：通常用圆圈来表示（上图<code>O</code>）</li>
+<li>终结点：通常用三角形来表示（上图<code>x</code>）</li>
+</ul>
+<p>「优劣」</p>
+<table>
+<thead>
+<tr>
+<th align="center">优点</th>
+<th align="center">速度快</th>
+<th align="center">准确高</th>
+<th align="center">处理连续和种类字段</th>
+<th align="center">适用于高维数据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">缺点</td>
+<td align="center">样本不同，信息增益偏向多方</td>
+<td align="center">容易过拟合</td>
+<td align="center">忽略属性关系</td>
+<td align="center">/</td>
+</tr>
+</tbody></table>
+<p>「引申」</p>
+<p>Entropy（熵），用以描述系统的凌乱程度；<br><img src="https://i.loli.net/2019/12/09/2fWN4mT597jtPhD.png" alt="熵的公式"></p>
+<blockquote>
+<p>在使用决策树时，较低的熵指向更有条理的数据，决策树将此用作事件分类方式。</p>
+</blockquote>
+<p>「理念」</p>
+<blockquote>
+<p>偏差和方差是两个模型误差中的两个来源，高偏差的模型会忽略数据，低偏差会使模型更加刻板，但在机器学习中希望算法是中庸的，具有适当的偏差达到一定泛化能力，敏锐而开放。</p>
+</blockquote>
+<p>「参考」<br><a href="https://sklearn.apachecn.org/" target="_blank" rel="noopener">sklearn官网</a></p>
+<hr>
+<p>以下未完待续…</p>
+<p><mark>4）神经网络 Neural Network  </mark></p>
+<p><mark>5）支持向量机 SVM  </mark></p>
+<p><mark>6）基于实例学习  </mark></p>
+<p><mark>7）朴素贝叶斯  </mark></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '请作者喝杯咖啡🥰', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/riverinem/riverinem.github.io/master/css/images/wechat.png',
+  alipayImage: 'https://raw.githubusercontent.com/riverinem/riverinem.github.io/master/css/images/alipay.png'
+});
+</script>
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="tag">人工智能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE/" rel="tag">数据</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/09/2019_12_09/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">RFM模型在实际中的运用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">2.</span> <span class="nav-text">目录</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ML简介"><span class="nav-number"></span> <span class="nav-text">ML简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型评估和验证"><span class="nav-number">1.</span> <span class="nav-text">模型评估和验证</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#监督学习"><span class="nav-number"></span> <span class="nav-text">监督学习</span></a>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2019 - 2019 Hexo All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">记录</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Hexo
+          </div>
+          <div class="panel-body">
+            Copyright © 2019 John Doe All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
