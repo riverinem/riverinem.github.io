@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>机器学习入门（上） | Hexo</title>
+  <title>机器学习之监督学习 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="技术学习人工智能数据" />
+  <meta name="keywords" content="技术学习数据人工智能" />
   
   
   
   
-  <meta name="description" content="前言本篇通过Udacity《机器学习工程师》Nano Degree 课程简述什么是“机器学习”以及如何学习。 目录 机器学习简介 模型评估和验证 监督学习 非监督学习 强化学习 Kaggle*  ML简介定义 首先看下百度的定义：  机器学习是一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、算法复杂度理论等多门学科； 机器学习专门研究计算机怎样模拟或实现人类的学习行为，以获取新的知识或技能">
-<meta name="keywords" content="技术,学习,人工智能,数据">
+  <meta name="description" content="前言机器学习系列将通过Udacity《机器学习工程师》Nano Degree 课程来简述什么是“机器学习”。该系列将分为监督学习、非监督学习和强化学习三片来阐述。 目录 机器学习简介√ 模型评估和验证√ 监督学习√ 非监督学习 强化学习 Kaggle*  打勾为本篇涉及内容 ML简介定义 首先看下百度的定义：  机器学习是一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、算法复杂度理论等多门">
+<meta name="keywords" content="技术,学习,数据,人工智能">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习入门（上）">
+<meta property="og:title" content="机器学习之监督学习">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;09&#x2F;2019_12_10&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言本篇通过Udacity《机器学习工程师》Nano Degree 课程简述什么是“机器学习”以及如何学习。 目录 机器学习简介 模型评估和验证 监督学习 非监督学习 强化学习 Kaggle*  ML简介定义 首先看下百度的定义：  机器学习是一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、算法复杂度理论等多门学科； 机器学习专门研究计算机怎样模拟或实现人类的学习行为，以获取新的知识或技能">
+<meta property="og:description" content="前言机器学习系列将通过Udacity《机器学习工程师》Nano Degree 课程来简述什么是“机器学习”。该系列将分为监督学习、非监督学习和强化学习三片来阐述。 目录 机器学习简介√ 模型评估和验证√ 监督学习√ 非监督学习 强化学习 Kaggle*  打勾为本篇涉及内容 ML简介定义 首先看下百度的定义：  机器学习是一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、算法复杂度理论等多门">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;09&#x2F;imErwfJdRzgcGko.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;09&#x2F;ws6Ze7iDGEnFCob.png">
@@ -25,7 +25,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;09&#x2F;9Ht7ZVSvihLmT2Q.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;09&#x2F;NJUsZ6Wfl3xOEpw.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;09&#x2F;2fWN4mT597jtPhD.png">
-<meta property="og:updated_time" content="2019-12-09T08:12:54.387Z">
+<meta property="og:updated_time" content="2019-12-09T08:21:58.987Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;09&#x2F;imErwfJdRzgcGko.png">
   
@@ -171,7 +171,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      机器学习入门（上）
+      机器学习之监督学习
     </h1>
   
 
@@ -196,16 +196,17 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本篇通过Udacity《机器学习工程师》Nano Degree 课程简述什么是“机器学习”以及如何学习。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>机器学习系列将通过Udacity《机器学习工程师》Nano Degree 课程来简述什么是“机器学习”。该系列将分为监督学习、非监督学习和强化学习三片来阐述。</p>
 <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
-<li>机器学习简介</li>
-<li>模型评估和验证</li>
-<li>监督学习</li>
+<li>机器学习简介<code>√</code></li>
+<li>模型评估和验证<code>√</code></li>
+<li>监督学习<code>√</code></li>
 <li>非监督学习</li>
 <li>强化学习</li>
 <li>Kaggle*</li>
 </ul>
-<h1 id="ML简介"><a href="#ML简介" class="headerlink" title="ML简介"></a>ML简介</h1><p><strong>定义</strong></p>
+<p><code>打勾为本篇涉及内容</code></p>
+<h2 id="ML简介"><a href="#ML简介" class="headerlink" title="ML简介"></a>ML简介</h2><p><strong>定义</strong></p>
 <p>首先看下<a href="https://baike.baidu.com/item/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/217599?fr=aladdin" target="_blank" rel="noopener">百度</a>的定义：</p>
 <ul>
 <li>机器学习是一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、算法复杂度理论等多门学科；</li>
@@ -292,7 +293,7 @@
 <p>在模型预测中，模型可能出现的<code>误差</code>来自两个主要来源，即：因模型无法表示基本数据的复杂度而造成的<code>偏差（bias）</code>，或者因模型对训练它所用的有限数据过度敏感而造成的<code>方差（variance）</code>。我们会对两者进行更详细的探讨。</p>
 <p>偏差：如前所述，如果模型具有足够的数据，但因不够复杂而无法捕捉基本关系，则会出现偏差。这样一来，模型一直会系统地错误表示数据，从而导致预测精度低。这种现象叫做<code>欠拟合（underfitting）</code>；在此情况下，我们向模型提供多少数据并不重要，因为简单模型根本无法表示其中的基本关系，我们需要更复杂的模型。</p>
 <p>方差：出现方差是正常的，但方差过高表明模型无法将其预测结果泛化到从中抽取训练样本的较大母体。对训练集高度敏感也称为<code>过拟合（overfitting）</code>，而且通常出现在模型过于复杂或我们没有足够的数据支持它时。通常，可以利用更多数据进行训练，以降低模型预测结果的方差并提高精度。</p>
-<h1 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h1><p>监管学习就是给定一堆样本，每个样本都有一组属性和一个类别，这些类别是事先确定的，那么通过学习得到一个分类器，这个分类器能够对新出现的对象给出正确的分类。这样的机器学习就被称之为监督学习。</p>
+<h2 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h2><p>监管学习就是给定一堆样本，每个样本都有一组属性和一个类别，这些类别是事先确定的，那么通过学习得到一个分类器，这个分类器能够对新出现的对象给出正确的分类。这样的机器学习就被称之为监督学习。</p>
 <p><strong>课程项目</strong></p>
 <p><img src="https://i.loli.net/2019/12/09/ws6Ze7iDGEnFCob.png" alt="构建学生预警系统"></p>
 <p>材料：语言和库</p>
@@ -387,13 +388,13 @@
 <blockquote>
 <p>偏差和方差是两个模型误差中的两个来源，高偏差的模型会忽略数据，低偏差会使模型更加刻板，但在机器学习中希望算法是中庸的，具有适当的偏差达到一定泛化能力，敏锐而开放。</p>
 </blockquote>
-<p>「参考」<br><a href="https://sklearn.apachecn.org/" target="_blank" rel="noopener">sklearn官网</a></p>
 <hr>
 <p>以下未完待续…</p>
 <p><mark>4）神经网络 Neural Network  </mark></p>
 <p><mark>5）支持向量机 SVM  </mark></p>
 <p><mark>6）基于实例学习  </mark></p>
 <p><mark>7）朴素贝叶斯  </mark></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://sklearn.apachecn.org/" target="_blank" rel="noopener">sklearn官网</a></p>
 
       
     </div>
@@ -468,7 +469,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">2.</span> <span class="nav-text">目录</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ML简介"><span class="nav-number"></span> <span class="nav-text">ML简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型评估和验证"><span class="nav-number">1.</span> <span class="nav-text">模型评估和验证</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#监督学习"><span class="nav-number"></span> <span class="nav-text">监督学习</span></a>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">2.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ML简介"><span class="nav-number">3.</span> <span class="nav-text">ML简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型评估和验证"><span class="nav-number">4.</span> <span class="nav-text">模型评估和验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监督学习"><span class="nav-number">5.</span> <span class="nav-text">监督学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol>
     
     </div>
   </aside>
