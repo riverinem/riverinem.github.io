@@ -3,18 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>tag: 数据 | Hexo</title>
+  <title>tableau实践：租房楼盘可视化筛选 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="keywords" content="技术学习数据" />
   
   
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;%E6%95%B0%E6%8D%AE&#x2F;index.html">
+  
+  <meta name="description" content="项目简述实践流程  确定问题：  目的：找到南山区价格合适的租房楼盘   拆解问题：  数据获取： 公开数据 x 爬虫数据 √ （最终选择Github房价爬虫项目）   工具清单： python：数据获取 excel：数据处理 tableau：数据可视化   罗列指标： 已有指标：地区、位置、楼盘、年份、总价、面积 新建指标：单价(excel)、统计指标（tableau）     获取数据  配置">
+<meta name="keywords" content="技术,学习,数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tableau实践：租房楼盘可视化筛选">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;13&#x2F;2019_12_13&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="项目简述实践流程  确定问题：  目的：找到南山区价格合适的租房楼盘   拆解问题：  数据获取： 公开数据 x 爬虫数据 √ （最终选择Github房价爬虫项目）   工具清单： python：数据获取 excel：数据处理 tableau：数据可视化   罗列指标： 已有指标：地区、位置、楼盘、年份、总价、面积 新建指标：单价(excel)、统计指标（tableau）     获取数据  配置">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;13&#x2F;xRerFQAYTsfmJpz.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;13&#x2F;EF2xyfShJ5BcmA4.png">
+<meta property="og:updated_time" content="2019-12-13T08:17:20.641Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;13&#x2F;xRerFQAYTsfmJpz.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -55,8 +64,6 @@
   
 
   
-    <link rel="stylesheet" href="/css/archive.css" >
-  
   
   
     <link rel="stylesheet" href="/css/vdonate.css" >
@@ -66,7 +73,7 @@
 
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
   
@@ -89,7 +96,7 @@
             
               <a class="brand" style="
                  border-width: 0px;  margin-top: 15px;"  
-                 >
+                href="#" data-toggle="modal" data-target="#myModal" >
                   <img width="50px" height="50px" alt="Hike News" src="/css/images/color.svg">
               </a>
             
@@ -152,106 +159,171 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;">
-  
-  
-  
+          <section id="main" style="float:none;"><article id="post-2019_12_13" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2019" class="archive-year">2019</a></h1>
-        </div>
-        <div class="archives">
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Tableau实践：租房楼盘可视化筛选
+    </h1>
+  
+
+      </header>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
+    <div class="article-meta">
       
-	<a href="/2019/12/13/2019_12_13/" class="archive-article-date">
+	<a href="/2019/12/13/2019_12_13/" class="article-date">
 	  <time datetime="2019-12-13T07:50:53.047Z" itemprop="datePublished">2019-12-13</time>
 	</a>
 
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/12/13/2019_12_13/">Tableau实践：租房楼盘可视化筛选</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
       
-	<a href="/2019/12/09/2019_12_10/" class="archive-article-date">
-	  <time datetime="2019-12-09T04:52:08.565Z" itemprop="datePublished">2019-12-09</time>
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
 	</a>
 
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/12/09/2019_12_10/">机器学习之监督学习</a>
-    </h1>
-  
 
-    </header>
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="项目简述"><a href="#项目简述" class="headerlink" title="项目简述"></a>项目简述</h2><p><strong>实践流程</strong></p>
+<ol>
+<li><p>确定问题：</p>
+<ul>
+<li>目的：找到南山区价格合适的租房楼盘</li>
+</ul>
+</li>
+<li><p>拆解问题：</p>
+<ul>
+<li>数据获取：<ul>
+<li>公开数据 x</li>
+<li>爬虫数据 √ （最终选择<a href="https://github.com/jumper2014/lianjia-beike-spider" target="_blank" rel="noopener">Github房价爬虫项目</a>）</li>
+</ul>
+</li>
+<li>工具清单：<ul>
+<li>python：数据获取</li>
+<li>excel：数据处理</li>
+<li>tableau：数据可视化</li>
+</ul>
+</li>
+<li>罗列指标：<ul>
+<li>已有指标：地区、位置、楼盘、年份、总价、面积</li>
+<li>新建指标：单价(excel)、统计指标（tableau）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>获取数据</p>
+<ul>
+<li>配置python版本和相关库；</li>
+<li>Clone Github项目到本地，并用终端执行</li>
+<li>获得爬取文档集合</li>
+</ul>
+</li>
+<li><p>处理数据</p>
+<ul>
+<li>合并爬取文档</li>
+<li>Excel处理空值、错值，提炼相关指标数值「地区、位置、面积、总价」，计算需要的新字段「单价」</li>
+<li>导入Tableau，1⃣️配置维度、量值；2⃣️配置筛选项；3⃣️标记辅助项；</li>
+<li>数据美化，提高可读性，「粉色-绿色」价格从高到低；</li>
+<li>发布到云端，方便走查改进</li>
+</ul>
+</li>
+</ol>
+<h2 id="项目预览"><a href="#项目预览" class="headerlink" title="项目预览"></a>项目预览</h2><p><img src="https://i.loli.net/2019/12/13/xRerFQAYTsfmJpz.png" alt="页面预览"></p>
+<p><a href="https://public.tableau.com/profile/timkong#!/vizhome/rent_sz/2?publish=yes" target="_blank" rel="noopener">预览Tableau传送门</a></p>
+<h2 id="Tip学习"><a href="#Tip学习" class="headerlink" title="Tip学习"></a>Tip学习</h2><p><strong>1）CSV快速合并</strong></p>
+<p><img src="https://i.loli.net/2019/12/13/EF2xyfShJ5BcmA4.png" alt="生成的csv文件"></p>
+<ul>
+<li>将需要整合的csv文件放置自定义目录下；</li>
+<li>打开<code>终端</code>，<code>cd</code>创建的目录</li>
+<li>输入<code>cat *.csv &gt; table.csv</code></li>
+<li>即可看到新生成的<code>table.csv</code></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '请作者喝杯咖啡🥰', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/riverinem/riverinem.github.io/master/css/images/wechat.png',
+  alipayImage: 'https://raw.githubusercontent.com/riverinem/riverinem.github.io/master/css/images/alipay.png'
+});
+</script>
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE/" rel="tag">数据</a></li></ul>
+
+      
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/09/2019_12_10/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">机器学习之监督学习</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
     
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目简述"><span class="nav-number">1.</span> <span class="nav-text">项目简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目预览"><span class="nav-number">2.</span> <span class="nav-text">项目预览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tip学习"><span class="nav-number">3.</span> <span class="nav-text">Tip学习</span></a></li></ol>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2019/12/09/2019_12_09/" class="archive-article-date">
-	  <time datetime="2019-12-08T23:56:54.490Z" itemprop="datePublished">2019-12-09</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/12/09/2019_12_09/">RFM模型在实际中的运用</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2019/12/08/2019_12_08_02/" class="archive-article-date">
-	  <time datetime="2019-12-08T06:55:33.855Z" itemprop="datePublished">2019-12-08</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/12/08/2019_12_08_02/">数据分析从入门到放弃:D</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+    </div>
+  </aside>
 
 </section>
         
@@ -343,6 +415,8 @@
 
 
 
+  <script src="/js/dialog.js"></script>
+
 
 
 
@@ -421,6 +495,8 @@
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
 </body>
 </html>
