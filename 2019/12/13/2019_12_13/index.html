@@ -11,17 +11,18 @@
   
   
   
-  <meta name="description" content="项目简述实践流程  确定问题：  目的：找到南山区价格合适的租房楼盘   拆解问题：  数据获取： 公开数据 x 爬虫数据 √ （最终选择Github房价爬虫项目）   工具清单： python：数据获取 excel：数据处理 tableau：数据可视化   罗列指标： 已有指标：地区、位置、楼盘、年份、总价、面积 新建指标：单价(excel)、统计指标（tableau）     获取数据  配置">
+  <meta name="description" content="项目概述 确定问题：  目的：找到南山区价格合适的租房楼盘   拆解问题：  数据获取： 公开数据 x 爬虫数据 √ （最终选择Github房价爬虫项目）   工具清单： python：数据获取 excel：数据处理 tableau：数据可视化   罗列指标： 已有指标：地区、位置、楼盘、年份、总价、面积 新建指标：单价(excel)、统计指标（tableau）     获取数据  配置pytho">
 <meta name="keywords" content="技术,学习,数据">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tableau实践：租房楼盘可视化筛选">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;13&#x2F;2019_12_13&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="项目简述实践流程  确定问题：  目的：找到南山区价格合适的租房楼盘   拆解问题：  数据获取： 公开数据 x 爬虫数据 √ （最终选择Github房价爬虫项目）   工具清单： python：数据获取 excel：数据处理 tableau：数据可视化   罗列指标： 已有指标：地区、位置、楼盘、年份、总价、面积 新建指标：单价(excel)、统计指标（tableau）     获取数据  配置">
+<meta property="og:description" content="项目概述 确定问题：  目的：找到南山区价格合适的租房楼盘   拆解问题：  数据获取： 公开数据 x 爬虫数据 √ （最终选择Github房价爬虫项目）   工具清单： python：数据获取 excel：数据处理 tableau：数据可视化   罗列指标： 已有指标：地区、位置、楼盘、年份、总价、面积 新建指标：单价(excel)、统计指标（tableau）     获取数据  配置pytho">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;13&#x2F;xRerFQAYTsfmJpz.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;13&#x2F;6IisLk8RVKjC25N.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;13&#x2F;EF2xyfShJ5BcmA4.png">
-<meta property="og:updated_time" content="2019-12-13T08:17:20.641Z">
+<meta property="og:updated_time" content="2019-12-13T08:33:28.305Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;13&#x2F;xRerFQAYTsfmJpz.png">
   
@@ -192,8 +193,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="项目简述"><a href="#项目简述" class="headerlink" title="项目简述"></a>项目简述</h2><p><strong>实践流程</strong></p>
-<ol>
+        <h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><ol>
 <li><p>确定问题：</p>
 <ul>
 <li>目的：找到南山区价格合适的租房楼盘</li>
@@ -238,7 +238,8 @@
 </ol>
 <h2 id="项目预览"><a href="#项目预览" class="headerlink" title="项目预览"></a>项目预览</h2><p><img src="https://i.loli.net/2019/12/13/xRerFQAYTsfmJpz.png" alt="页面预览"></p>
 <p><a href="https://public.tableau.com/profile/timkong#!/vizhome/rent_sz/2?publish=yes" target="_blank" rel="noopener">预览Tableau传送门</a></p>
-<h2 id="Tip学习"><a href="#Tip学习" class="headerlink" title="Tip学习"></a>Tip学习</h2><p><strong>1）CSV快速合并</strong></p>
+<p><strong>小结</strong><br><img src="https://i.loli.net/2019/12/13/6IisLk8RVKjC25N.png" alt="截图"><br>通过数据可以看到贝壳上南山区中位数租房单价是在250元/平方米（蓝色虚线），租房单价较高的楼盘集中在粉色区域的楼盘，且租房面积绝大数在10平方米以内，且房源集中在南山中心、科技园、后海；而10平米开外的单价却低于南山区的中位数。PS：程序员GG们靠实力顶起了南山区的房价:D</p>
+<h2 id="Tip学习"><a href="#Tip学习" class="headerlink" title="Tip学习"></a>Tip学习</h2><p><strong>CSV快速合并</strong></p>
 <p><img src="https://i.loli.net/2019/12/13/EF2xyfShJ5BcmA4.png" alt="生成的csv文件"></p>
 <ul>
 <li>将需要整合的csv文件放置自定义目录下；</li>
@@ -320,7 +321,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目简述"><span class="nav-number">1.</span> <span class="nav-text">项目简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目预览"><span class="nav-number">2.</span> <span class="nav-text">项目预览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tip学习"><span class="nav-number">3.</span> <span class="nav-text">Tip学习</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目概述"><span class="nav-number">1.</span> <span class="nav-text">项目概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目预览"><span class="nav-number">2.</span> <span class="nav-text">项目预览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tip学习"><span class="nav-number">3.</span> <span class="nav-text">Tip学习</span></a></li></ol>
     
     </div>
   </aside>
