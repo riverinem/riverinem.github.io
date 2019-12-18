@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>pandas-profiling小试（数据预览分析） | Hexo</title>
+  <title>pandas-profiling实践 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="keywords" content="数据Python" />
@@ -11,13 +11,13 @@
   
   
   
-  <meta name="description" content="Pandas-Profiling（数据预览分析）这是Github和知乎上很热的python数据分析包，对于前期的探索性数据分析来说，可以快速预览数据，快速到只需一行代码，可以了解基本的统计数据和数据分布。 为了演示，本篇采用Kaggle上的宝可梦数据集。  流程该书1）安装与调试  pip install pandas-profiling   import pandas as pd   impor">
+  <meta name="description" content="前言这是Github和知乎上很热的python数据分析包，对于前期的探索性数据分析来说，可以快速预览数据，快速到只需一行代码，可以了解基本的统计数据和数据分布。 为了演示，本篇采用Kaggle上的宝可梦数据集。  使用流程1）安装与调试  pip install pandas-profiling   import pandas as pd   import pandas_profiling  2）">
 <meta name="keywords" content="数据,Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pandas-Profiling小试（数据预览分析）">
+<meta property="og:title" content="Pandas-Profiling实践">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;18&#x2F;2019_12_18&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Pandas-Profiling（数据预览分析）这是Github和知乎上很热的python数据分析包，对于前期的探索性数据分析来说，可以快速预览数据，快速到只需一行代码，可以了解基本的统计数据和数据分布。 为了演示，本篇采用Kaggle上的宝可梦数据集。  流程该书1）安装与调试  pip install pandas-profiling   import pandas as pd   impor">
+<meta property="og:description" content="前言这是Github和知乎上很热的python数据分析包，对于前期的探索性数据分析来说，可以快速预览数据，快速到只需一行代码，可以了解基本的统计数据和数据分布。 为了演示，本篇采用Kaggle上的宝可梦数据集。  使用流程1）安装与调试  pip install pandas-profiling   import pandas as pd   import pandas_profiling  2）">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;18&#x2F;MOb8dDBRmpYZwGy.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;18&#x2F;r1s84DZboLfFP5N.png">
@@ -26,7 +26,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;18&#x2F;28wb9EZteSVFH3Q.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;18&#x2F;tuwrEcZo1Bg2QX4.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;18&#x2F;af5geVx6jYGd9wp.png">
-<meta property="og:updated_time" content="2019-12-18T12:44:41.000Z">
+<meta property="og:updated_time" content="2019-12-18T12:53:29.962Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;18&#x2F;MOb8dDBRmpYZwGy.png">
   
@@ -172,7 +172,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Pandas-Profiling小试（数据预览分析）
+      Pandas-Profiling实践
     </h1>
   
 
@@ -197,10 +197,10 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Pandas-Profiling（数据预览分析）"><a href="#Pandas-Profiling（数据预览分析）" class="headerlink" title="Pandas-Profiling（数据预览分析）"></a>Pandas-Profiling（数据预览分析）</h2><p>这是Github和知乎上很热的python数据分析包，对于前期的探索性数据分析来说，可以快速预览数据，快速到只需一行代码，可以了解基本的统计数据和数据分布。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是Github和知乎上很热的python数据分析包，对于前期的探索性数据分析来说，可以快速预览数据，快速到只需一行代码，可以了解基本的统计数据和数据分布。</p>
 <p>为了演示，本篇采用Kaggle上的<a href="https://www.kaggle.com/abcsds/pokemon#Pokemon.csv" target="_blank" rel="noopener">宝可梦数据集</a>。</p>
 <p><img src="https://i.loli.net/2019/12/18/MOb8dDBRmpYZwGy.png" alt="宝可梦"></p>
-<h2 id="流程该书"><a href="#流程该书" class="headerlink" title="流程该书"></a>流程该书</h2><p><strong>1）安装与调试</strong></p>
+<h2 id="使用流程"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程</h2><p><strong>1）安装与调试</strong></p>
 <blockquote>
 <p>pip install pandas-profiling</p>
 </blockquote>
@@ -343,7 +343,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pandas-Profiling（数据预览分析）"><span class="nav-number">1.</span> <span class="nav-text">Pandas-Profiling（数据预览分析）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程该书"><span class="nav-number">2.</span> <span class="nav-text">流程该书</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用流程"><span class="nav-number">2.</span> <span class="nav-text">使用流程</span></a></li></ol>
     
     </div>
   </aside>
