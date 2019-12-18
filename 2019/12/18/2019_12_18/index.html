@@ -3,18 +3,32 @@
 <head>
   <meta charset="utf-8">
   
-  <title>tag: python | Hexo</title>
+  <title>pandas-profiling小试（数据预览分析） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="keywords" content="数据Python" />
   
   
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;Python&#x2F;index.html">
+  
+  <meta name="description" content="Pandas-Profiling（数据预览分析）这是Github和知乎上很热的python数据分析包，对于前期的探索性数据分析来说，可以快速预览数据，快速到只需一行代码，可以了解基本的统计数据和数据分布。 为了演示，本篇采用Kaggle上的宝可梦数据集。  流程该书1）安装与调试  pip install pandas-profiling   import pandas as pd   impor">
+<meta name="keywords" content="数据,Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pandas-Profiling小试（数据预览分析）">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;18&#x2F;2019_12_18&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Pandas-Profiling（数据预览分析）这是Github和知乎上很热的python数据分析包，对于前期的探索性数据分析来说，可以快速预览数据，快速到只需一行代码，可以了解基本的统计数据和数据分布。 为了演示，本篇采用Kaggle上的宝可梦数据集。  流程该书1）安装与调试  pip install pandas-profiling   import pandas as pd   impor">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;18&#x2F;MOb8dDBRmpYZwGy.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;18&#x2F;r1s84DZboLfFP5N.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;18&#x2F;psrDaKxcQbgR6Zv.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;18&#x2F;UDn6TYBAmhzefG5.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;18&#x2F;28wb9EZteSVFH3Q.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;18&#x2F;tuwrEcZo1Bg2QX4.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;18&#x2F;af5geVx6jYGd9wp.png">
+<meta property="og:updated_time" content="2019-12-18T12:44:41.000Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;18&#x2F;MOb8dDBRmpYZwGy.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -55,8 +69,6 @@
   
 
   
-    <link rel="stylesheet" href="/css/archive.css" >
-  
   
   
     <link rel="stylesheet" href="/css/vdonate.css" >
@@ -66,7 +78,7 @@
 
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
   
@@ -89,7 +101,7 @@
             
               <a class="brand" style="
                  border-width: 0px;  margin-top: 15px;"  
-                 >
+                href="#" data-toggle="modal" data-target="#myModal" >
                   <img width="50px" height="50px" alt="Hike News" src="/css/images/color.svg">
               </a>
             
@@ -152,64 +164,189 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;">
-  
-  
-  
+          <section id="main" style="float:none;"><article id="post-2019_12_18" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2019" class="archive-year">2019</a></h1>
-        </div>
-        <div class="archives">
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Pandas-Profiling小试（数据预览分析）
+    </h1>
+  
+
+      </header>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
+    <div class="article-meta">
       
-	<a href="/2019/12/18/2019_12_18/" class="archive-article-date">
+	<a href="/2019/12/18/2019_12_18/" class="article-date">
 	  <time datetime="2019-12-18T12:41:09.646Z" itemprop="datePublished">2019-12-18</time>
 	</a>
 
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/12/18/2019_12_18/">Pandas-Profiling小试（数据预览分析）</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
       
-	<a href="/2019/12/09/2019_12_15/" class="archive-article-date">
-	  <time datetime="2019-12-09T11:20:21.596Z" itemprop="datePublished">2019-12-09</time>
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
 	</a>
 
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/12/09/2019_12_15/">Python学习记录</a>
-    </h1>
-  
 
-    </header>
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Pandas-Profiling（数据预览分析）"><a href="#Pandas-Profiling（数据预览分析）" class="headerlink" title="Pandas-Profiling（数据预览分析）"></a>Pandas-Profiling（数据预览分析）</h2><p>这是Github和知乎上很热的python数据分析包，对于前期的探索性数据分析来说，可以快速预览数据，快速到只需一行代码，可以了解基本的统计数据和数据分布。</p>
+<p>为了演示，本篇采用Kaggle上的<a href="https://www.kaggle.com/abcsds/pokemon#Pokemon.csv" target="_blank" rel="noopener">宝可梦数据集</a>。</p>
+<p><img src="https://i.loli.net/2019/12/18/MOb8dDBRmpYZwGy.png" alt="宝可梦"></p>
+<h2 id="流程该书"><a href="#流程该书" class="headerlink" title="流程该书"></a>流程该书</h2><p><strong>1）安装与调试</strong></p>
+<blockquote>
+<p>pip install pandas-profiling</p>
+</blockquote>
+<blockquote>
+<p>import pandas as pd</p>
+</blockquote>
+<blockquote>
+<p>import pandas_profiling</p>
+</blockquote>
+<p><strong>2）导入数据</strong></p>
+<blockquote>
+<p>pokemon=pd.read_csv(‘Pokemon.csv’)</p>
+</blockquote>
+<p><strong>3）快速查看</strong></p>
+<blockquote>
+<p>pandas_profiling.ProfileReport(pokemon)</p>
+</blockquote>
+<p><strong>4）数据预览</strong></p>
+<ul>
+<li>变量数(列)</li>
+<li>观察数(行)</li>
+<li>数据缺失率</li>
+<li>内存</li>
+<li>数据类型分布情况</li>
+</ul>
+<p><img src="https://i.loli.net/2019/12/18/r1s84DZboLfFP5N.png" alt="Pokemon-Overview"></p>
+<blockquote>
+<p>描述：这份数据表包含13个变量，共计800个样本，缺失率为3.7%，占内存75kb，数字变量8个、类型2个、布尔值1个、拒绝变量1个、文本1个；</p>
+</blockquote>
+<p><strong>5）变量描述</strong></p>
+<ul>
+<li>HP值</li>
+</ul>
+<p><img src="https://i.loli.net/2019/12/18/psrDaKxcQbgR6Zv.png" alt="HP"></p>
+<blockquote>
+<p>描述：HP最高为255，最低为1，平均数为69；</p>
+</blockquote>
+<ul>
+<li>Attack</li>
+</ul>
+<p><img src="https://i.loli.net/2019/12/18/UDn6TYBAmhzefG5.png" alt="Attack"></p>
+<blockquote>
+<p>描述：攻击力最高为190，最低为5，平均数为79；</p>
+</blockquote>
+<ul>
+<li>Defense</li>
+</ul>
+<p><img src="https://i.loli.net/2019/12/18/28wb9EZteSVFH3Q.png" alt="Defense"></p>
+<blockquote>
+<p>描述：防御最高为230，最低为5，平均数为73；</p>
+</blockquote>
+<p><strong>6）相关性分析</strong></p>
+<p>统计学中三大相关性系数模型：Spearman, Pearson 和Kendall；以一个热图来展示，突出强相关的变量，反应的都是两个变量之间变化趋势的方向以及程度，其值范围为-1到+1，0表示两个变量不相关，正值表示正相关，负值表示负相关，值越大表示相关性越强。</p>
+<p><img src="https://i.loli.net/2019/12/18/tuwrEcZo1Bg2QX4.png" alt="Pearson"></p>
+<p><strong>7）生成报告文件</strong></p>
+<ul>
+<li><mark>通过代码导出html文件</mark></li>
+</ul>
+<blockquote>
+<p>profile = pandas_profiling.ProfileReport(data)</p>
+</blockquote>
+<blockquote>
+<p>profile.to_file(outputfile = “output_file.html”)</p>
+</blockquote>
+<ul>
+<li><mark>通过 jupyter notebook导出各类格式</mark></li>
+</ul>
+<p><img src="https://i.loli.net/2019/12/18/af5geVx6jYGd9wp.png" alt="截图"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '请作者喝杯咖啡🥰', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/riverinem/riverinem.github.io/master/css/images/wechat.png',
+  alipayImage: 'https://raw.githubusercontent.com/riverinem/riverinem.github.io/master/css/images/alipay.png'
+});
+</script>
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE/" rel="tag">数据</a></li></ul>
+
+      
+
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/12/13/2019_12_13/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Tableau实践：租房楼盘可视化</div>
+    </a>
   
+</nav>
 
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pandas-Profiling（数据预览分析）"><span class="nav-number">1.</span> <span class="nav-text">Pandas-Profiling（数据预览分析）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程该书"><span class="nav-number">2.</span> <span class="nav-text">流程该书</span></a></li></ol>
+    
+    </div>
+  </aside>
 
 </section>
         
@@ -301,6 +438,8 @@
 
 
 
+  <script src="/js/dialog.js"></script>
+
 
 
 
@@ -379,6 +518,8 @@
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
 </body>
 </html>
